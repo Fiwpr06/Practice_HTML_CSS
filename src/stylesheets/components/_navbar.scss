@@ -1,0 +1,116 @@
+@use "../abstracts/" as *;
+
+.navigation-container {
+  width: 100%;
+  height: 8.1rem;
+  @include flex($direction: column, $align: flex-start);
+  @include tablet {
+    height: 13.8rem;
+  }
+
+  .top-nav {
+    width: 100%;
+    height: 3.669rem;
+    padding: 0.6rem 4.7rem;
+    background-color: #000;
+    @include flex($justify: center, $align: center);
+
+    .note {
+      color: $text;
+      font-family: Rubik;
+      font-size: 0.8rem;
+      font-weight: 400;
+      line-height: 2.1rem;
+
+      .important-note {
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+      }
+
+      .mark {
+        font-weight: 600;
+      }
+    }
+
+    @include tablet {
+      height: 5.3rem;
+      padding: 1.6rem 0;
+
+      .note {
+        white-space: nowrap;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .navbar {
+    width: 100%;
+    height: 4.431rem;
+    padding: 0.8rem 2rem;
+    background-color: $background-color;
+    @include flex($justify: space-between, $align: center);
+
+    @include tablet {
+      @include flex($justify: space-between, $align: center);
+      height: 8.5rem;
+      padding: 2rem 6.2rem;
+      gap: 1rem;
+    }
+
+    .nav-list {
+      height: 2.1rem;
+      @include flex($justify: center);
+      gap: 4rem;
+
+      .list-items {
+        @include flex($direction: row, $align: center);
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+
+        .nav-item a {
+          white-space: nowrap;
+          color: #1c1c1c;
+          font-family: $primary-font;
+          font-size: 1.6rem;
+          font-weight: 500;
+          line-height: 2.1rem;
+        }
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .contact-us {
+      padding: 1rem 2rem;
+      border-radius: 0.6rem;
+      background: $primary;
+      color: $primary-color;
+      gap: 1rem;
+      font-size: 1.6rem;
+      @include flex($justify: center, $align: center);
+      white-space: nowrap;
+      cursor: pointer;
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .menu-button {
+      display: none;
+      width: 1.965rem;
+      height: 1.7056rem;
+      border: none;
+      flex-shrink: 0;
+      @include bg-img("../assets/icon/Menu.svg");
+      cursor: pointer;
+      @include mobile {
+        display: flex;
+      }
+    }
+  }
+}

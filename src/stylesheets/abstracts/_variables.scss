@@ -1,0 +1,14 @@
+//Font family
+$primary-font: Rubik, sans-serif;
+
+//Color
+$background-color: #fff;
+$primary-color: #fff;
+$primary: #1341ec;
+$text:#FAFAFA;
+
+//Breakpoint
+$medium: 768px;
+$extra-lager: 1200px;
+$mobile: calc($medium - 1px);
+$tablet: calc($extra-lager - 1px);

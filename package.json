@@ -1,0 +1,23 @@
+{
+  "name": "practice_html_css",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./src/pages/index.html",
+    "build": "parcel build ./src/pages/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "parcel": "^2.14.4",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^2.0.1",
+    "sass": "^1.86.2"
+  },
+  "dependencies": {
+    "tough-cookie": "^5.1.2"
+  }
+}

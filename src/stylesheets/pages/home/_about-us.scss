@@ -28,6 +28,7 @@
       font-weight: 700;
       opacity: 0.5;
       margin: 0 auto;
+      z-index: 0;
     }
 
     &-fg {
@@ -37,6 +38,7 @@
       line-height: 4.5rem;
       position: absolute;
       transform: translateY(10%);
+      z-index: 1;
       margin: 0;
     }
   }

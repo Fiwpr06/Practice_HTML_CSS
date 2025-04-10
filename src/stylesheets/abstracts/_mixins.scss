@@ -65,3 +65,9 @@
     background-color: $color;
   }
 }
+
+@mixin order-card($id, $order) {
+  ##{$id} {
+    order: $order;
+  }
+}

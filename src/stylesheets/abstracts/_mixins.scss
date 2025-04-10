@@ -1,0 +1,73 @@
+@use "variables" as *;
+
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $medium) {
+    @content;
+  }
+}
+
+@mixin flex(
+  $display: flex,
+  $direction: false,
+  $align: false,
+  $justify: false,
+  $wrap: false
+) {
+  display: $display;
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
+
+@mixin bg-img(
+  $bg: "",
+  $position: false,
+  $size: cover,
+  $repeat: no-repeat,
+  $attachment: "",
+  // Thêm thuộc tính cho background-attachment
+  $color: "" // Thêm thuộc tính cho background-color
+) {
+  background-image: url($bg);
+
+  @if $position {
+    background-position: $position;
+  }
+
+  @if $size {
+    background-size: $size;
+  }
+
+  @if $repeat {
+    background-repeat: $repeat;
+  }
+
+  @if $attachment {
+    background-attachment: $attachment;
+  }
+
+  @if $color {
+    background-color: $color;
+  }
+}
+
+@mixin order-card($id, $order) {
+  ##{$id} {
+    order: $order;
+  }
+}

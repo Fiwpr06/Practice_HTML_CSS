@@ -1,0 +1,168 @@
+@use "../../abstracts/" as *;
+
+.testimonials {
+  @include flex($direction: column, $justify: center, $align: center);
+  margin: 0 auto;
+  max-width: 100%;
+  width: 361px;
+  font-family: $primary-font;
+
+  &__header {
+    @include flex($direction: column, $justify: start, $align: center);
+    width: 100%;
+    padding: 12px 19px 12px 20px;
+    white-space: nowrap;
+  }
+
+  &__subtitle {
+    color: $primary;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__title-wrapper {
+    @include flex($justify: center, $align: center);
+    position: relative;
+    padding: 0 32px;
+    gap: 4px;
+  }
+
+  &__title-bg {
+    color: #e5e5e5;
+    font-size: 40.96px;
+    font-weight: 600;
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  &__title {
+    z-index: 1;
+    position: absolute;
+    transform: translateY(20%);
+    color: $grey1;
+    font-size: 20.48px;
+    font-weight: 700;
+    line-height: 168.75%;
+  }
+
+  &__slider {
+    @include flex($direction: column, $align: center);
+    width: 100%;
+    max-width: 320px;
+    gap: 40px;
+
+    &-container {
+      width: 100%;
+    }
+  }
+
+  &__card {
+    @include flex($direction: column, $justify: flex-start);
+    padding: 24px 12px;
+    width: 100%;
+    max-width: 320px;
+    gap: 4.612px;
+    box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background: $background-color;
+  }
+
+  &__card-content {
+    @include flex($direction: column, $justify: center, $align: center);
+    gap: 6px;
+  }
+
+  &__user {
+    @include flex($direction: column, $align: center);
+
+    &-images {
+      position: relative;
+    }
+
+    &-image {
+      aspect-ratio: 1.03;
+      object-fit: contain;
+      object-position: center;
+      width: 153px;
+      max-width: 100%;
+      border-radius: 46px;
+      &:nth-of-type(2) {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 2;
+      }
+    }
+
+    &-info {
+      width: 127px;
+      max-width: 100%;
+      text-align: center;
+
+      & .testimonials__user-name {
+        color: #080d20;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 150%;
+      }
+
+      & .testimonials__user-position {
+        flex-shrink: 0;
+        color: #000;
+        font-size: 8px;
+        font-weight: 300;
+        line-height: 200%;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &__text-container {
+    @include flex($direction: column, $align: center);
+    width: 100%;
+  }
+
+  &__text-wrapper {
+    @include flex($direction: column, $align: flex-start);
+    position: relative;
+    width: 100%;
+  }
+
+  &__quote-icon {
+    aspect-ratio: 1.31;
+    width: 21px;
+  }
+
+  &__quote-end-container {
+    @include flex($justify: flex-end);
+    width: 100%;
+  }
+  &__quote-end-icon {
+    aspect-ratio: 1.47;
+    width: 22px;
+  }
+
+  &__text {
+    font-weight: 400;
+    color: #000;
+    font-size: 8.301px;
+    flex-shrink: 0;
+    line-height: 133.3%;
+    margin-left: 2rem;
+  }
+
+  &__start-icon {
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  &__tablet {
+    display: none;
+  }
+
+  &__dots {
+    display: none;
+  }
+}

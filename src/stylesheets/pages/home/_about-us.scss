@@ -84,9 +84,10 @@
   // Responsive
   @include tablet {
     @include flex($direction: row, $align: flex-start);
+    min-width: 144rem;
     align-items: stretch;
     padding: 6.4rem 0rem;
-    // gap: 5.6rem;
+    gap: 5.6rem;
 
     &__container {
       @include flex($align: flex-start);

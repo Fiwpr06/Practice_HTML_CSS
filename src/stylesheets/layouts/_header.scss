@@ -124,6 +124,7 @@
 // Responsive - Tablet
 @include tablet {
   .header {
+    min-width: 144rem;
     height: 83.8rem;
     @include flex($direction: column, $align: center);
     gap: 4.2rem;

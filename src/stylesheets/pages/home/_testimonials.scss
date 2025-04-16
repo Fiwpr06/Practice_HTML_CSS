@@ -3,8 +3,8 @@
 .testimonials {
   @include flex($direction: column, $justify: center, $align: center);
   margin: 0 auto;
-  max-width: 100%;
-  width: 361px;
+  width: 100%;
+  max-width: 361px;
   font-family: $primary-font;
 
   &__header {
@@ -61,7 +61,6 @@
     @include flex($direction: column, $justify: flex-start);
     padding: 24px 12px;
     width: 100%;
-    max-width: 320px;
     gap: 4.612px;
     box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
@@ -87,6 +86,7 @@
       width: 153px;
       max-width: 100%;
       border-radius: 46px;
+
       &:nth-of-type(2) {
         position: absolute;
         bottom: 1rem;
@@ -138,6 +138,7 @@
     @include flex($justify: flex-end);
     width: 100%;
   }
+
   &__quote-end-icon {
     aspect-ratio: 1.47;
     width: 22px;
@@ -149,7 +150,7 @@
     font-size: 8.301px;
     flex-shrink: 0;
     line-height: 133.3%;
-    margin-left: 2rem;
+    margin-left: 2.1rem;
   }
 
   &__start-icon {
@@ -164,5 +165,129 @@
 
   &__dots {
     display: none;
+  }
+
+  @include tablet {
+    min-width: 1440px;
+    padding: 46px 96px 82px;
+    gap: 61px;
+
+    &__subtitle {
+      font-size: 24px;
+    }
+
+    &__title-wrapper {
+      padding: 0 76px;
+      gap: 10px;
+    }
+
+    &__title-bg {
+      font-size: 96px;
+    }
+
+    &__title {
+      font-size: 48px;
+      line-height: 2;
+    }
+
+    &__slider {
+      @include flex($direction: row, $align: center, $justify: center);
+      max-width: 1240px;
+    }
+
+    &__slider-container {
+      @include flex($direction: row, $align: center);
+      gap: 43px;
+    }
+
+    &__card {
+      border-radius: 17px;
+      box-shadow: 1px 3px 4px 5px rgba(0, 0, 0, 0.25);
+      padding: 31px;
+    }
+
+    &__card-content {
+      @include flex($direction: row, $align: center, $justify: space-between);
+      gap: 13px;
+    }
+
+    &__user {
+      width: 333px;
+      text-align: center;
+
+      &-image {
+        width: 333px;
+        border-radius: 100px;
+
+        &:nth-of-type(2) {
+          bottom: 1.5rem;
+          right: 1.5rem;
+        }
+      }
+
+      &-info {
+        width: 276px;
+        padding: 0 14px 30px;
+      }
+
+      &-name {
+        font-size: 36px;
+      }
+
+      &-position {
+        font-size: 18px;
+      }
+    }
+
+    &__text-container {
+      gap: 18px;
+    }
+
+    &__text-wrapper {
+      max-width: 643px;
+      padding-right: 8px;
+    }
+
+    &__quote-icon {
+      aspect-ratio: 1.37;
+      width: 47px;
+    }
+
+    &__text {
+      font-size: 18px;
+      margin-left: 4.7rem;
+    }
+
+    &__quote-end-icon {
+      aspect-ratio: 1.47;
+      width: 47px;
+    }
+
+    &__both-arrow {
+      display: none;
+    }
+
+    &__tablet {
+      display: flex;
+    }
+
+    &__dots {
+      @include flex($align: flex-start, $justify: flex-start);
+      gap: 13px;
+    }
+
+    .dot {
+      background-color: #000;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+
+      &-active {
+        border-radius: 9.762px;
+        background-color: $primary;
+        width: 35px;
+        height: 16px;
+      }
+    }
   }
 }

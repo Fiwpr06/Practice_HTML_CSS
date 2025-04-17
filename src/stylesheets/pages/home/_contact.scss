@@ -1,0 +1,182 @@
+@use "../../abstracts/" as *;
+
+.contact-section {
+  @include flex($direction: column, $align: flex-start);
+  width: 100%;
+  margin: 52px auto 0;
+  max-width: 361px;
+  background: #000;
+  position: relative;
+  padding: 59px 45px;
+  overflow: hidden;
+  font-family: $primary-font;
+  gap: 45.5px;
+
+  .contact-header {
+    @include flex($direction: column, $align: flex-start);
+    gap: 8px;
+    z-index: 0;
+    width: 100%;
+    color: $primary-color;
+
+    .contact-title {
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    .contact-subtitle {
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  .watermark-text {
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: $grey5;
+    font-size: 103px;
+    font-weight: 700;
+    position: absolute;
+    z-index: 0;
+    right: -231px;
+    bottom: 12px;
+    width: 602px;
+    height: 81px;
+    opacity: 0.3;
+  }
+
+  .contact-form {
+    @include flex($direction: column, $align: flex-start);
+    gap: 28px;
+    z-index: 0;
+    font-size: 8px;
+    color: $grey6;
+    font-weight: 400;
+    line-height: 1.5;
+    width: fit-content;
+    max-width: 100%;
+
+    .form-row {
+      width: 100%;
+      @include flex($align: flex-start);
+      gap: 9px;
+
+      .form-group {
+        min-width: 128px;
+        @include flex($direction: column, $align: flex-start);
+        gap: 3px;
+
+        .input-line {
+          border: none;
+          height: 1px;
+          background-color: $grey6;
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+
+    .message-group {
+      width: 100%;
+      white-space: nowrap;
+    }
+
+    .dropdown-container {
+      width: 100%;
+      @include flex($justify: space-between);
+
+      .dropdown-arrow {
+        aspect-ratio: 2.33;
+        object-fit: contain;
+        object-position: center;
+        width: 7px;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .contact-watermark {
+    -webkit-text-stroke-width: 0.19px;
+    -webkit-text-stroke-color: $grey5;
+    font-family: Graphik, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    text-transform: lowercase;
+    opacity: 0.3;
+    position: absolute;
+    z-index: 0;
+    right: -34px;
+    top: 0px;
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  @include tablet {
+    @include flex($direction: row, $justify: center, $align: flex-start);
+    max-width: none;
+    min-width: 1440px;
+    width: 100%;
+    padding: 172px 96px;
+    gap: 66px;
+
+    .contact-header {
+      width: fit-content;
+      order: 2;
+      gap: 18px;
+
+      .contact-title {
+        font-size: 54px;
+      }
+
+      .contact-subtitle {
+        font-size: 24px;
+      }
+    }
+
+    .watermark-text {
+      -webkit-text-stroke-width: 0.55px;
+      font-size: 280px;
+      right: -163.784px;
+      bottom: 8.369px;
+      width: 1638px;
+      height: 220px;
+    }
+
+    .contact-form {
+      order: 1;
+      @include flex($direction: column, $align: flex-start);
+      gap: 61px;
+      font-size: 18px;
+
+      .form-row {
+        width: 100%;
+        @include flex($align: flex-start);
+        gap: 19px;
+
+        .form-group {
+          min-width: 285px;
+          gap: 3px;
+        }
+      }
+      .dropdown-container {
+        .dropdown-arrow {
+          width: 15px;
+        }
+      }
+    }
+
+    .contact-watermark {
+      -webkit-text-stroke-width: 0.55px;
+      font-size: 191px;
+      right: -65px;
+      top: -48px;
+
+      span {
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -1,17 +1,11 @@
 @use "../../abstracts/" as *;
 
 .about-section {
-  @include flex($direction: column, $justify: center, $align: center);
+  @include flex($direction: column, $justify: center, $align: center, $wrap: wrap);
   gap: 3.2rem;
   width: 100%;
   padding: 3.2rem 2rem;
   font-family: $primary-font;
-  flex-wrap: wrap;
-
-  &__container {
-    @include flex($direction: column, $justify: center, $align: center);
-    gap: 1.8rem;
-  }
 
   &__content {
     @include flex($direction: column, $justify: center, $align: center);

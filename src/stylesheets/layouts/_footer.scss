@@ -1,0 +1,243 @@
+@use "../abstracts/" as *;
+
+.site-footer {
+  @include flex($direction: column, $align: flex-start);
+  margin-top: 16px;
+  width: 100%;
+  font-family: $primary-font;
+
+  .footer-content {
+    @include flex($direction: column, $align: flex-start);
+    margin: 0 auto;
+    max-width: 361px;
+    width: 100%;
+    padding: 56px 82px 56px 24px;
+    gap: 37px;
+
+    .company-info {
+      @include flex($direction: column, $align: flex-start);
+      background-color: $background-color;
+      gap: 22px;
+
+      .company-details {
+        @include flex($direction: column, $align: flex-start);
+        gap: 25px;
+
+        .company-description {
+          color: #383838;
+          font-size: 9.5px;
+          font-weight: 400;
+          line-height: 171.429%;
+        }
+      }
+    }
+
+    .footer-links-container {
+      @include flex($align: flex-start);
+      background-color: $primary-font;
+      gap: 45px;
+
+      .footer-nav {
+        @include flex($direction: column, $align: flex-start);
+        gap: 26px;
+
+        .footer-links {
+          @include flex($direction: column, $align: flex-start);
+          gap: 10px;
+          padding: 10px;
+          font-size: 9px;
+          color: #2c2c2c;
+          font-weight: 400;
+          list-style-type: none;
+
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .footer-contact {
+        @include flex($direction: column, $align: flex-start);
+        gap: 26px;
+        color: #0e0f1d;
+
+        .contact-list {
+          @include flex($direction: column, $align: flex-start);
+          gap: 11px;
+          font-size: 9.5px;
+          font-weight: 400;
+          list-style-type: none;
+
+          .contact-item {
+            @include flex($justify: center, $align: flex-start);
+            gap: 11px;
+
+            &:last-child {
+              line-height: 171.429%;
+            }
+
+            .contact-icon {
+              aspect-ratio: 1;
+              object-fit: contain;
+              object-position: center;
+              width: 16px;
+              flex-shrink: 0;
+            }
+
+            .contact-address {
+              width: 141px;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-map {
+      background-color: $background-color;
+      @include flex($direction: column, $align: flex-start);
+      gap: 14px;
+      width: 243px;
+      max-width: 100%;
+      font-size: 12px;
+      color: #383838;
+      font-weight: 600;
+
+      .map-image {
+        aspect-ratio: 1.67;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-bottom {
+    background-color: #000;
+    @include flex($justify: center, $align: flex-start);
+    min-height: 46px;
+    min-width: 361px;
+    width: 100%;
+    padding: 12px 15px;
+    gap: 21px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+
+    .copyright {
+      align-self: center;
+    }
+  }
+
+  @include tablet {
+    @include flex($align: flex-start);
+    min-width: 1440px;
+    margin: 0;
+
+    .footer-content {
+      @include flex($direction: row, $align: flex-start);
+      max-width: none;
+      width: 100%;
+      padding: 65px 96px;
+      gap: 67px;
+
+      .company-info {
+        width: 371px;
+        gap: 33px;
+
+        .company-details {
+          gap: 40px;
+
+          .company-description {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .footer-links-container {
+        gap: 67px;
+
+        .footer-nav {
+          gap: 38px;
+
+          .footer-links {
+            font-size: 14px;
+          }
+        }
+
+        .footer-contact {
+          gap: 31px;
+
+          .contact-list {
+            font-size: 14px;
+            gap: 16px;
+
+            .contact-item {
+              @include flex($align: flex-start);
+              gap: 16px;
+
+              .contact-icon {
+                width: 16px;
+              }
+              .contact-address {
+                width: 208px;
+              }
+            }
+          }
+        }
+      }
+
+      .footer-map {
+        gap: 20px;
+        width: 359px;
+        font-size: 18px;
+      }
+    }
+
+    .footer-bottom {
+      @include flex($align: flex-start);
+      max-width: none;
+      width: 100%;
+      padding: 24px 96px;
+      gap: 776px;
+      align-self: stretch;
+      font-size: 16px;
+
+      .copyright {
+        align-self: center;
+      }
+    }
+  }
+}
+
+.footer-heading {
+  color: #383838;
+  font-size: 12px;
+  font-weight: 600;
+
+  @include tablet {
+    font-size: 18;
+  }
+}
+
+.social-links {
+  @include flex($align: flex-start);
+  gap: 10px;
+
+  .social-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 16px;
+    flex-shrink: 0;
+  }
+
+  @include tablet {
+    @include flex($align: flex-start);
+    gap: 15px;
+
+    .social-icon {
+      width: 24px;
+    }
+  }
+}

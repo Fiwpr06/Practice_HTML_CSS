@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+.social-links {
+  @include flex($align: flex-start);
+  gap: 10px;
+
+  .social-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 10px;
+    flex-shrink: 0;
+  }
+
+  @include tablet {
+    @include flex($align: flex-start);
+    gap: 15px;
+
+    .social-icon {
+      width: 16px;
+    }
+  }
+}

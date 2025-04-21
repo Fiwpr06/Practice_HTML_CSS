@@ -3,11 +3,12 @@
 .logo {
   @include flex($justify: flex-start, $align: center);
   gap: 0.54rem;
+}
 
   &-text {
     @include flex($justify: center, $align: center);
     gap: 0.4rem;
-    color: #1341ec;
+    color: $primary;
     font-family: Syne;
     font-size: 1.8rem;
     font-weight: 700;
@@ -16,6 +17,7 @@
 
     &__trans {
       color: #1c1c1c;
+      color: $trans-color;
       font-family: Risque;
       font-weight: 400;
     }
@@ -25,6 +27,6 @@
     width: 2.6rem;
     height: 2.8rem;
     stroke-width: 0.07rem;
-    stroke: #1c1c1c;
+    stroke: $trans-color;
   }
 }

@@ -3,7 +3,6 @@
 .logo {
   @include flex($justify: flex-start, $align: center);
   gap: 0.54rem;
-}
 
   &-text {
     @include flex($justify: center, $align: center);

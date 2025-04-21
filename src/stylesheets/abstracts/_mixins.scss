@@ -40,8 +40,7 @@
   $size: cover,
   $repeat: no-repeat,
   $attachment: "",
-  // Thêm thuộc tính cho background-attachment
-  $color: "" // Thêm thuộc tính cho background-color
+  $color: ""
 ) {
   background-image: url($bg);
 

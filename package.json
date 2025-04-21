@@ -5,19 +5,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel ./src/pages/index.html",
-    "build": "parcel build ./src/pages/index.html"
+    "build": "parcel build ./src/pages/index.html",
+    "header": "parcel ./src/layout/header.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.14.4",
     "parcel": "^2.14.4",
+    "posthtml": "^0.16.6",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^2.0.1",
-    "sass": "^1.86.2"
-  },
-  "dependencies": {
-    "tough-cookie": "^5.1.2"
+    "sass": "^1.86.2",
+    "svgo": "^3.3.2"
   }
 }

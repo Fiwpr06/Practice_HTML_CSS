@@ -16,7 +16,7 @@
 
   .section-title-bg {
     opacity: 0.5;
-    color: #e5e5e5;
+    color: $section-title;
     font-size: 5.933rem;
     font-weight: 600;
     z-index: 0;
@@ -35,7 +35,7 @@
     @include flex($direction: column, $justify: start, $align: center);
     display: flex;
     margin-top: 1.6rem;
-    color: #fff;
+    color: $primary-color;
     font-weight: 500;
     line-height: 150%;
 
@@ -95,7 +95,7 @@
 
     .services-tablet-grid {
       @include flex($direction: column, $justify: center, $align: center);
-      color: #fff;
+      color: $primary-color;
       font-weight: 500;
       .services-tablet-row {
         @include flex($justify: start, $align: end);

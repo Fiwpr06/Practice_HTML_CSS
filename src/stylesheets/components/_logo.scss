@@ -28,6 +28,10 @@
     stroke-width: 0.07rem;
     stroke: $trans-color;
   }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .logo-img {

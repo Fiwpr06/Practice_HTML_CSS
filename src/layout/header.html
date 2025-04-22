@@ -1,4 +1,16 @@
-<header class="header">
+<header class="header-container">
+  <div class="header__background">
+    <img
+      src="../assets/images/background.png"
+      alt="Background for header"
+      class="background-img"
+    />
+    <img
+      src="../assets/images/background1.png"
+      alt="Background for header"
+      class="background-img1"
+    />
+  </div>
   <section class="header__top">
     <section class="navigation-container">
       <include src="./components/top-nav.html"></include>
@@ -13,39 +25,40 @@
 
   <section class="header__bottom">
     <div class="hero-background">
-      <section class="hero-container">
-        <div class="hero">
-          <div class="hero__content">
-            <div class="hero__text">
-              <div class="hero__text__heading">
-                <h2>Ship to and from anywhere in the world</h2>
-                <h1>Find the best freight quote</h1>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Aliquam nibh quam
-                vivamus ultricies semper sed gravida dictumst nunc. Ut ac
-                luctus facilisis ipsum mauris volutpat elementum ut. Volutpat
-                nullam tellus egestas scelerisque tellus
-              </p>
+      <img src="../assets/images/image2.png" alt="Background for hero" />
+    </div>
+    <section class="hero-container">
+      <div class="hero">
+        <div class="hero__content">
+          <div class="hero__text">
+            <div class="hero__heading">
+              <h2>Ship to and from anywhere in the world</h2>
+              <h1>Find the best freight quote</h1>
             </div>
-
-            <div class="hero__search">
-              <input
-                type="text"
-                placeholder="Search for Container NO or Booking ID"
-              />
-              <button>Track Order</button>
-            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Aliquam nibh quam vivamus
+              ultricies semper sed gravida dictumst nunc. Ut ac luctus facilisis
+              ipsum mauris volutpat elementum ut. Volutpat nullam tellus egestas
+              scelerisque tellus
+            </p>
           </div>
 
-          <div class="hero__img">
-            <img
-              src="../assets/images/Map.png"
-              alt="Map showing our service locations"
+          <div class="hero__search">
+            <input
+              type="text"
+              placeholder="Search for Container NO or Booking ID"
             />
+            <button>Track Order</button>
           </div>
         </div>
-      </section>
-    </div>
+
+        <figure class="hero__img">
+          <img
+            src="../assets/images/Map.png"
+            alt="Map showing our service locations"
+          />
+        </figure>
+      </div>
+    </section>
   </section>
 </header>

@@ -34,6 +34,30 @@
   }
 }
 
+@mixin font-style(
+  $family: $primary-font,
+  $size: null,
+  $weight: null,
+  $height: null,
+  $spacing: null
+) {
+  @if $family {
+    font-family: $family;
+  }
+  @if $size {
+    font-size: $size;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $height {
+    line-height: $height;
+  }
+  @if $spacing {
+    letter-spacing: $spacing;
+  }
+}
+
 @mixin bg-img(
   $bg: "",
   $position: false,

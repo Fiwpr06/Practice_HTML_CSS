@@ -4,7 +4,9 @@
 .services-section {
   @include flex($direction: column, $justify: start, $align: center);
   padding: 0 1.9rem 0 2rem;
-  font-family: $primary-font;
+  @include font-style();
+  margin: 0 auto;
+  gap: 1.6rem;
 
   .section-header {
     @include flex($direction: column, $align: center);
@@ -17,15 +19,13 @@
   .section-title-bg {
     opacity: 0.5;
     color: $section-title;
-    font-size: 5.933rem;
-    font-weight: 600;
+    @include font-style($size: 6rem, $weight: 600);
     z-index: 0;
   }
 
   .section-title {
     color: $grey1;
-    font-size: 3rem;
-    font-weight: 700;
+    @include font-style($size: 3rem, $weight: 700);
     position: absolute;
     z-index: 1;
     transform: translateY(85%);
@@ -33,19 +33,15 @@
 
   .services-grid {
     @include flex($direction: column, $justify: start, $align: center);
-    display: flex;
-    margin-top: 1.6rem;
+    gap: 0.8rem;
+    @include font-style($height: 1.5, $weight: 500);
     color: $primary-color;
-    font-weight: 500;
-    line-height: 150%;
 
     .services-row {
-      display: flex;
       @include flex($direction: column, $justify: start, $align: center);
 
       &-small {
         @include flex($direction: row, $justify: start, $align: start);
-        margin-top: 1.6rem;
         gap: 0.8rem;
         font-size: 1.2rem;
       }
@@ -53,7 +49,6 @@
       &-special {
         @include flex($direction: row, $justify: start, $align: start);
         display: flex;
-        margin-top: 0.8rem;
         gap: 0.8rem;
       }
     }
@@ -96,11 +91,10 @@
     .services-tablet-grid {
       @include flex($direction: column, $justify: center, $align: center);
       color: $primary-color;
-      font-weight: 500;
+      @include font-style($weight: 500);
       .services-tablet-row {
-        @include flex($justify: start, $align: end);
+        @include flex($justify: start, $align: end, $wrap: wrap);
         gap: 2rem;
-        flex-wrap: wrap;
         margin-top: 3.8rem;
 
         &:first-child {

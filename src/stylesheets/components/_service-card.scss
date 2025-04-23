@@ -1,13 +1,34 @@
 @use "../abstracts/" as *;
 
 .service-card {
+  @include flex($direction: column);
+  position: relative;
   border-radius: 0.2rem;
+  overflow: hidden;
+
+  img.service-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  figcaption.service-title {
+    position: relative;
+    z-index: 1;
+    @include font-style($weight: 500);
+    width: 100%;
+    padding: 13.7rem 1.3rem 1.1rem;
+  }
 
   &-large {
     width: 32rem;
     font-size: 1.3rem;
 
-    .service-content {
+    figcaption.service-title {
       aspect-ratio: 1.916;
     }
   }
@@ -15,7 +36,7 @@
   &-medium {
     width: 15.6rem;
 
-    .service-content {
+    figcaption.service-title {
       aspect-ratio: 0.934;
       padding: 13.7rem 1.4rem 1.1rem;
     }
@@ -27,7 +48,7 @@
     gap: 0.6rem;
     font-size: 0.9rem;
 
-    .service-content {
+    figcaption.service-title {
       aspect-ratio: 0.665;
       padding: 14.1rem 0.8rem 1.2rem;
       border-radius: 0.1rem;
@@ -36,37 +57,18 @@
 
   &-large-special {
     width: 20.1rem;
-    font-size: 1.2rem;
-    line-height: 1;
+    @include font-style($size: 1.2rem, $height: 1);
 
-    .service-content {
+    figcaption.service-title {
       aspect-ratio: 1.204;
       padding: 14.3rem 1.1rem 1.3rem;
       border-radius: 0.1rem;
     }
   }
 
-  .service-content {
-    @include flex($direction: column);
-    position: relative;
-    width: 100%;
-    padding: 13.7rem 1.3rem 1.1rem;
-    border-radius: 0.2rem;
-  }
-
-  .service-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .service-title {
-    position: relative;
-    font-size: inherit;
-    font-weight: 500;
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -101,7 +103,12 @@
       position: relative;
       padding: 2.7rem 3.3rem;
       margin-top: 35rem;
-      font-size: 3.2rem;
+      @include font-style($size: 3.2rem);
+    }
+
+    &:hover {
+      transform: translateY(-0.8rem);
+      box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);
     }
   }
 }

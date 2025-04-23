@@ -77,9 +77,9 @@
             width: 100%;
             gap: 1.4817rem;
             @include font-style(
-              $font-size: 1.1113rem,
-              $font-weight: 400,
-              $line-height: 1.6669rem
+              $size: 1.1113rem,
+              $weight: 400,
+              $height: 1.6669rem
             );
             color: $primary-color;
             @include flex($direction: column, $align: flex-start);
@@ -91,20 +91,16 @@
 
               h2 {
                 @include font-style(
-                  $font-size: 0.7rem,
-                  $font-weight: 500,
-                  $line-height: 1.7rem
+                  $size: 0.7rem,
+                  $weight: 500,
+                  $height: 1.7rem,
+                  $spacing: 0.1185rem
                 );
                 font-variant: small-caps;
-                letter-spacing: 0.1185rem;
               }
 
               h1 {
-                @include font-style(
-                  $font-size: 3rem,
-                  $font-weight: 600,
-                  $line-height: 3.7rem
-                );
+                @include font-style($size: 3rem, $weight: 600, $height: 3.7rem);
               }
             }
           }
@@ -191,12 +187,11 @@
               gap: 3.2rem;
 
               h2 {
-                font-size: 1.4rem;
-                letter-spacing: 0.2rem;
+                @include font-style($size: 1.4rem, $spacing: 0.2rem);
               }
 
               h1 {
-                @include font-style($font-size: 4.8rem, $line-height: 125%);
+                @include font-style($size: 4.8rem, $height: 125%);
               }
             }
           }

@@ -77,14 +77,17 @@
           font-size: 1.6rem;
           font-weight: 500;
           line-height: 2.1rem;
+          text-decoration: none;
+          display: inline-block;
 
           &:hover {
-            font-weight: 600;
+            color: $primary;
+            transform: scale(1.2);
           }
 
           &:focus {
             outline: none;
-            box-shadow: 0 0 5px rgba(16, 37, 77, 0.5);
+            box-shadow: 0 0 5px $primary;
           }
         }
       }
@@ -118,7 +121,7 @@
       @include bg-img("../assets/icon/Menu.svg");
       cursor: pointer;
       &:hover {
-        transform: rotate(90deg); // Xoay icon khi hover
+        transform: rotate(90deg);
       }
 
       @include mobile {

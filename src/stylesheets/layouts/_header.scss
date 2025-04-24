@@ -180,7 +180,9 @@
           }
 
           .hero__text {
+            max-width: 46.5rem;
             gap: 3.2rem;
+            @include font-style($size: 1.8rem, $height: 1.5, $weight: 400);
 
             .hero__heading {
               height: auto;

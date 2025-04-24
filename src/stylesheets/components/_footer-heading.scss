@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+.footer-heading {
+  color: $neutral-100;
+  @include font-style($size: 1.2rem, $weight: 600);
+
+  @include tablet {
+    @include font-style($size: 1.8rem);
+  }
+}

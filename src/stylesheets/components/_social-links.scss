@@ -2,22 +2,28 @@
 
 .social-links {
   @include flex($align: flex-start);
-  gap: 10px;
+  gap: 1rem;
 
   .social-icon {
     aspect-ratio: 1;
     object-fit: contain;
     object-position: center;
-    width: 10px;
+    width: 1rem;
     flex-shrink: 0;
+    transition: transform 0.4s ease, filter 0.4s ease;
+
+    &:hover {
+      transform: scale(1.5);
+      filter: brightness(1.2);
+    }
   }
 
   @include tablet {
     @include flex($align: flex-start);
-    gap: 15px;
+    gap: 1.5rem;
 
     .social-icon {
-      width: 16px;
+      width: 1.6rem;
     }
   }
 }

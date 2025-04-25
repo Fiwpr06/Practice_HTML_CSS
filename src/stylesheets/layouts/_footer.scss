@@ -149,7 +149,7 @@
     margin: 0;
 
     .footer-content {
-      @include flex($direction: row, $align: flex-start);
+      @include flex($direction: row, $align: flex-start, $justify: center);
       max-width: none;
       width: 100%;
       padding: 6.5rem 9.6rem;

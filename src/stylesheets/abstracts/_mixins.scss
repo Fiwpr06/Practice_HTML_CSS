@@ -34,37 +34,14 @@
   }
 }
 
-@mixin font-style(
-  $family: $primary-font,
-  $size: null,
-  $weight: null,
-  $height: null,
-  $spacing: null
-) {
-  @if $family {
-    font-family: $family;
-  }
-  @if $size {
-    font-size: $size;
-  }
-  @if $weight {
-    font-weight: $weight;
-  }
-  @if $height {
-    line-height: $height;
-  }
-  @if $spacing {
-    letter-spacing: $spacing;
-  }
-}
-
 @mixin bg-img(
   $bg: "",
   $position: false,
   $size: cover,
   $repeat: no-repeat,
   $attachment: "",
-  $color: ""
+  // Thêm thuộc tính cho background-attachment
+  $color: "" // Thêm thuộc tính cho background-color
 ) {
   background-image: url($bg);
 
@@ -86,11 +63,5 @@
 
   @if $color {
     background-color: $color;
-  }
-}
-
-@mixin order-card($id, $order) {
-  ##{$id} {
-    order: $order;
   }
 }

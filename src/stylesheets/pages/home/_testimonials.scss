@@ -1,0 +1,313 @@
+@use "../../abstracts/" as *;
+
+.testimonials {
+  @include flex($direction: column, $justify: center, $align: center);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 36.1rem;
+  @include font-style();
+
+  &__header {
+    @include flex($direction: column, $justify: start, $align: center);
+    width: 100%;
+    padding: 1.2rem 1.9rem 1.2rem 2rem;
+    white-space: nowrap;
+  }
+
+  &__subtitle {
+    @include font-style($size: 1rem, $height: 1.5, $weight: 600);
+    color: $primary;
+  }
+
+  &__title-wrapper {
+    @include flex($justify: center, $align: center);
+    position: relative;
+    padding: 0 3.2rem;
+    gap: 0.4rem;
+  }
+
+  &__title-bg {
+    color: $section-title;
+    @include font-style($size: 4.1rem, $height: 1.5, $weight: 600);
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  &__title {
+    z-index: 1;
+    position: absolute;
+    transform: translateY(20%);
+    color: $grey1;
+    @include font-style($size: 2rem, $height: 1.7, $weight: 700);
+  }
+
+  &__slider {
+    @include flex($direction: column, $align: center);
+    width: 100%;
+    max-width: 32rem;
+    gap: 4rem;
+
+    &-container {
+      width: 100%;
+    }
+  }
+
+  &__card {
+    @include flex($direction: column, $justify: flex-start);
+    padding: 2.4rem 1.2rem;
+    width: 100%;
+    gap: 0.4612rem;
+    box-shadow: 0 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.251);
+    border-radius: 0.8rem;
+    background: $background-color;
+  }
+
+  &__card-content {
+    @include flex($direction: column, $justify: center, $align: center);
+    gap: 0.6rem;
+  }
+
+  &__user {
+    @include flex($direction: column, $align: center);
+
+    &-images {
+      position: relative;
+    }
+
+    &-image {
+      aspect-ratio: 1.03;
+      object-fit: contain;
+      object-position: center;
+      width: 15.3rem;
+      max-width: 100%;
+      border-radius: 4.6rem;
+
+      &:nth-of-type(1) {
+        pointer-events: none;
+      }
+
+      &:nth-of-type(2) {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 2;
+
+        &:hover {
+          transition: all 0.3s ease;
+          transform: scale(1.1);
+          box-shadow: 0 0.4rem 0.8rem $primary;
+        }
+      }
+    }
+
+    &-info {
+      width: 12.7rem;
+      max-width: 100%;
+      text-align: center;
+
+      & .testimonials__user-name {
+        color: $grey1;
+        @include font-style($size: 1.7rem, $height: 1.5, $weight: 600);
+      }
+
+      & .testimonials__user-position {
+        flex-shrink: 0;
+        color: $grey1;
+        @include font-style($size: 0.8rem, $height: 2, $weight: 300);
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &__text-container {
+    @include flex($direction: column, $align: center);
+    width: 100%;
+  }
+
+  &__text-wrapper {
+    @include flex($direction: column, $align: flex-start);
+    position: relative;
+    width: 100%;
+  }
+
+  &__quote-icon {
+    aspect-ratio: 1.31;
+    width: 2.1rem;
+    pointer-events: none;
+  }
+
+  &__quote-end-container {
+    @include flex($justify: flex-end);
+    width: 100%;
+  }
+
+  &__quote-end-icon {
+    pointer-events: none;
+    aspect-ratio: 1.47;
+    width: 2.2rem;
+  }
+
+  &__text {
+    @include font-style($size: 0.8rem, $height: 1.3, $weight: 400);
+    color: $grey1;
+    flex-shrink: 0;
+    margin-left: 2.1rem;
+  }
+
+  &__start-icon {
+    width: auto;
+    height: auto;
+    margin-top: 1rem;
+
+    &:hover {
+      transition: all 0.3s ease;
+      transform: scale(1.05);
+    }
+  }
+
+  &__tablet {
+    display: none;
+  }
+
+  &__dots {
+    display: none;
+  }
+
+  @include tablet {
+    min-width: 144rem;
+    padding: 4.6rem 9.6rem 8.2rem;
+    gap: 6.1rem;
+
+    &__subtitle {
+      @include font-style($size: 2.4rem);
+    }
+
+    &__title-wrapper {
+      padding: 0 7.6rem;
+      gap: 1rem;
+    }
+
+    &__title-bg {
+      @include font-style($size: 9.6rem);
+    }
+
+    &__title {
+      @include font-style($size: 4.8rem, $height: 2);
+    }
+
+    &__slider {
+      @include flex($direction: row, $align: center, $justify: center);
+      max-width: 124rem;
+    }
+
+    &__slider-container {
+      @include flex($direction: row, $align: center);
+      gap: 4.3rem;
+    }
+
+    &__card {
+      border-radius: 1.7rem;
+      box-shadow: 0.1rem 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.25);
+      padding: 3.1rem;
+    }
+
+    &__card-content {
+      @include flex($direction: row, $align: center, $justify: space-between);
+      gap: 1.3rem;
+    }
+
+    &__user {
+      width: 33.3rem;
+      text-align: center;
+
+      &-image {
+        width: 33.3rem;
+        border-radius: 10rem;
+
+        &:nth-of-type(2) {
+          bottom: 1.5rem;
+          right: 1.5rem;
+        }
+      }
+
+      &-info {
+        width: 27.6rem;
+        padding: 0 1.4rem 3rem;
+      }
+
+      &-name {
+        @include font-style($size: 3.6rem);
+      }
+
+      &-position {
+        @include font-style($size: 1.8rem);
+      }
+    }
+
+    &__text-container {
+      gap: 1.8rem;
+    }
+
+    &__text-wrapper {
+      max-width: 64.3rem;
+      padding-right: 0.8rem;
+    }
+
+    &__quote-icon {
+      aspect-ratio: 1.37;
+      width: 4.7rem;
+    }
+
+    &__text {
+      @include font-style($size: 1.8rem);
+      margin-left: 4.7rem;
+    }
+
+    &__quote-end-icon {
+      aspect-ratio: 1.47;
+      width: 4.7rem;
+    }
+
+    &__both-arrow {
+      display: none;
+    }
+
+    &__tablet {
+      display: flex;
+    }
+
+    &__dots {
+      @include flex($align: flex-start, $justify: flex-start);
+      gap: 1.3rem;
+
+      &:hover .dot-active:not(:hover) {
+        border-radius: 50%;
+        background-color: $grey1;
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+
+    .dot {
+      background-color: $grey1;
+      border-radius: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-radius: 0.9762rem;
+        background-color: $primary;
+        width: 3.5rem;
+        height: 1.6rem;
+      }
+
+      &-active {
+        border-radius: 0.9762rem;
+        background-color: $primary;
+        width: 3.5rem;
+        height: 1.6rem;
+      }
+    }
+  }
+}

@@ -15,10 +15,11 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.14.4",
     "parcel": "^2.14.4",
-    "posthtml": "^0.16.6",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^2.0.1",
-    "sass": "^1.86.2",
+    "sass": "^1.86.2"
+  },
+  "dependencies": {
     "svgo": "^3.3.2"
   }
 }

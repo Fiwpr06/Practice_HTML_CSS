@@ -10,26 +10,24 @@
 
   .top-nav {
     width: 100%;
-    height: 3.669rem;
+    height: 4rem;
     padding: 0.6rem 4.7rem;
     background-color: $grey1;
     @include flex($justify: center, $align: center);
 
     .note {
       color: $text;
-      font-family: Rubik;
-      font-size: 0.8rem;
-      font-weight: 400;
-      line-height: 2.1rem;
+      @include font-style($size: 0.8rem, $height: 2.1, $weight: 400);
 
       .important-note {
+        @include font-style($weight: 600);
         font-weight: 600;
         text-decoration: underline;
         text-decoration-skip-ink: none;
       }
 
       .mark {
-        font-weight: 600;
+        @include font-style($weight: 600);
       }
     }
 
@@ -39,14 +37,14 @@
 
       .note {
         white-space: nowrap;
-        font-size: 1.4rem;
+        @include font-style($size: 1.4rem);
       }
     }
   }
 
   .navbar {
     width: 100%;
-    height: 4.431rem;
+    height: 4.5rem;
     padding: 0.8rem 2rem;
     background-color: $background-color;
     @include flex($justify: space-between, $align: center);
@@ -77,6 +75,18 @@
           font-size: 1.6rem;
           font-weight: 500;
           line-height: 2.1rem;
+          text-decoration: none;
+          display: inline-block;
+
+          &:hover {
+            color: $primary;
+            transform: scale(1.2);
+          }
+
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0.5rem $primary;
+          }
         }
       }
 
@@ -86,15 +96,17 @@
     }
 
     .contact-us {
+      @include flex($justify: center, $align: center);
+      @include font-style($size: 1.6rem);
       padding: 1rem 2rem;
       border-radius: 0.6rem;
       background: $primary;
       color: $primary-color;
       gap: 1rem;
       font-size: 1.6rem;
-      @include flex($justify: center, $align: center);
       white-space: nowrap;
       cursor: pointer;
+
       @include mobile {
         display: none;
       }
@@ -102,12 +114,18 @@
 
     .menu-button {
       display: none;
-      width: 1.965rem;
-      height: 1.7056rem;
+      @include bg-img("../assets/icon/Menu.svg");
+      width: 2rem;
+      height: 1.7rem;
       border: none;
       flex-shrink: 0;
-      @include bg-img("../assets/icon/Menu.svg");
       cursor: pointer;
+      transition: transform 0.4s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
       @include mobile {
         display: flex;
       }

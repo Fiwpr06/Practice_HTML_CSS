@@ -3,22 +3,24 @@
 .logo {
   @include flex($justify: flex-start, $align: center);
   gap: 0.54rem;
+  transition: transform 0.2s ease;
 
   &-text {
     @include flex($justify: center, $align: center);
     gap: 0.4rem;
     color: $primary;
-    font-family: Syne;
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 150%;
+    @include font-style(
+      $family: Syne,
+      $size: 1.8rem,
+      $height: 1.5,
+      $weight: 700
+    );
     text-transform: capitalize;
 
     &__trans {
       color: #1c1c1c;
       color: $trans-color;
-      font-family: Risque;
-      font-weight: 400;
+      @include font-style($family: Risque, $weight: 400);
     }
   }
 
@@ -27,5 +29,9 @@
     height: 2.8rem;
     stroke-width: 0.07rem;
     stroke: $trans-color;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }

@@ -2,8 +2,7 @@
 
 .logo {
   @include flex($justify: flex-start, $align: center);
-  gap: 0.4rem;
-}
+  gap: 0.54rem;
 
   &-text {
     @include flex($justify: center, $align: center);
@@ -16,6 +15,7 @@
     text-transform: capitalize;
 
     &__trans {
+      color: #1c1c1c;
       color: $trans-color;
       font-family: Risque;
       font-weight: 400;
@@ -28,11 +28,4 @@
     stroke-width: 0.07rem;
     stroke: $trans-color;
   }
-}
-
-.logo-img {
-  width: 2.6rem;
-  height: 2.8308rem;
-  stroke-width: 0.0726rem;
-  stroke: #1c1c1c;
 }

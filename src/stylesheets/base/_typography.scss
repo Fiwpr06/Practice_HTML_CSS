@@ -1,0 +1,45 @@
+@use "../abstracts/" as *;
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/font/Rubik-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("../assets/font/Graphik-Semibold-Trial.otf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/font/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Risque";
+  src: url("../assets/font/Risque-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/font/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../assets/font/Syne-Bold.ttf");
+}
+
+body {
+  color: $white;
+  background-color: $white;
+  @include font-style($size: 0.8rem, $weight: 400, $height: 1.5rem);
+
+  @include tablet {
+    @include font-style($size: 1.3rem);
+  }
+
+  @include pc {
+    @include font-style($size: 1.8rem);
+  }
+}

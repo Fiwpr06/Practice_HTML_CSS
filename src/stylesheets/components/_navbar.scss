@@ -3,25 +3,23 @@
 .navigation-container {
   width: 100%;
   height: 8.1rem;
-  @include flex($direction: column, $align: flex-start);
-  @include tablet {
-    height: 13.8rem;
-  }
+  background-color: $white;
+  @include flex($direction: column, $align: center);
 
   .top-nav {
     width: 100%;
     height: 4rem;
     padding: 0.6rem 4.7rem;
-    background-color: $grey1;
+    background-color: $black;
     @include flex($justify: center, $align: center);
 
     .note {
-      color: $text;
+      color: $white;
       @include font-style($size: 0.8rem, $height: 2.1, $weight: 400);
 
       .important-note {
+        white-space: nowrap;
         @include font-style($weight: 600);
-        font-weight: 600;
         text-decoration: underline;
         text-decoration-skip-ink: none;
       }
@@ -30,31 +28,13 @@
         @include font-style($weight: 600);
       }
     }
-
-    @include tablet {
-      height: 5.3rem;
-      padding: 1.6rem 0;
-
-      .note {
-        white-space: nowrap;
-        @include font-style($size: 1.4rem);
-      }
-    }
   }
 
   .navbar {
     width: 100%;
     height: 4.5rem;
     padding: 0.8rem 2rem;
-    background-color: $background-color;
     @include flex($justify: space-between, $align: center);
-
-    @include tablet {
-      @include flex($justify: space-between, $align: center);
-      height: 8.5rem;
-      padding: 2rem 6.2rem;
-      gap: 1rem;
-    }
 
     .nav-list {
       height: 2.1rem;
@@ -70,7 +50,7 @@
 
         .nav-item a {
           white-space: nowrap;
-          color: $trans-color;
+          color: $dark;
           font-family: $primary-font;
           font-size: 1.6rem;
           font-weight: 500;
@@ -89,10 +69,6 @@
           }
         }
       }
-
-      @include mobile {
-        display: none;
-      }
     }
 
     .contact-us {
@@ -101,15 +77,11 @@
       padding: 1rem 2rem;
       border-radius: 0.6rem;
       background: $primary;
-      color: $primary-color;
+      color: $white;
       gap: 1rem;
       font-size: 1.6rem;
       white-space: nowrap;
       cursor: pointer;
-
-      @include mobile {
-        display: none;
-      }
     }
 
     .menu-button {
@@ -125,10 +97,68 @@
       &:hover {
         transform: scale(1.1);
       }
+    }
+  }
 
-      @include mobile {
+  @include mobile {
+    .navbar {
+      .nav-list {
+        display: none;
+      }
+
+      .contact-us {
+        display: none;
+      }
+
+      .menu-button {
         display: flex;
       }
+    }
+  }
+
+  @include tablet {
+    height: auto;
+    .top-nav {
+      height: 5.3rem;
+      padding: 1.6rem 0;
+
+      .note {
+        @include font-style($size: 1.2rem);
+      }
+    }
+
+    .navbar {
+      padding: 2rem 6.2rem;
+      gap: 1rem;
+
+      .nav-list {
+        .list-items {
+          .nav-item a {
+            @include font-style($size: 1.2rem);
+          }
+        }
+      }
+
+      .contact-us {
+        @include font-style($size: 1.2rem);
+      }
+    }
+  }
+
+  @include pc {
+    height: 13.8rem;
+
+    .top-nav {
+      .note {
+        @include font-style($size: 1.4rem, $height: 2.1, $weight: 400);
+      }
+    }
+
+    .navbar {
+      max-width: 124rem;
+      height: 8.5rem;
+      padding: 2rem 0rem;
+      gap: 1rem;
     }
   }
 }

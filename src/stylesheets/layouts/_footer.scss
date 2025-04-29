@@ -11,14 +11,13 @@
   .footer-content {
     @include flex($direction: column, $align: flex-start);
     margin: 0 auto;
-    max-width: 36.1rem;
     width: 100%;
     padding: 5.6rem 8.2rem 5.6rem 2.4rem;
     gap: 3.7rem;
 
     .company-info {
       @include flex($direction: column, $align: flex-start);
-      background-color: $background-color;
+      background-color: $white;
       gap: 2.2rem;
 
       .company-details {
@@ -26,7 +25,7 @@
         gap: 2.5rem;
 
         .company-description {
-          color: $neutral-100;
+          color: $dark;
           @include font-style($size: 0.95rem, $height: 1.7, $weight: 400);
         }
       }
@@ -46,7 +45,7 @@
           gap: 1rem;
           padding: 1rem;
           @include font-style($size: 0.9rem, $weight: 400);
-          color: $neutral-100;
+          color: $dark;
           list-style-type: none;
 
           a {
@@ -65,7 +64,7 @@
       .footer-contact {
         @include flex($direction: column, $align: flex-start);
         gap: 2.6rem;
-        color: $grey1;
+        color: $black;
 
         .contact-list {
           @include flex($direction: column, $align: flex-start);
@@ -103,13 +102,12 @@
     }
 
     .footer-map {
-      background-color: $background-color;
+      background-color: $white;
       @include flex($direction: column, $align: flex-start);
       gap: 1.4rem;
-      width: 24.3rem;
-      max-width: 100%;
+      width: 100%;
       @include font-style($size: 1.2rem, $weight: 600);
-      color: $neutral-100;
+      color: $dark;
 
       .map-image {
         aspect-ratio: 1.67;
@@ -128,54 +126,55 @@
   }
 
   .footer-bottom {
-    background-color: $grey1;
-    @include flex($justify: center, $align: flex-start);
-    min-height: 4.6rem;
-    min-width: 36.1rem;
+    background-color: $black;
     width: 100%;
-    padding: 1.2rem 1.5rem;
-    gap: 2.1rem;
-    @include font-style($size: 1.2rem, $weight: 400);
-    color: $primary-color;
+    color: $white;
 
-    .copyright {
-      align-self: center;
+    .footer-bottom__container {
+      padding: 1.2rem 1.5rem;
+      @include flex($justify: space-between, $align: center);
+      margin: 0 auto;
+      width: 100%;
+      @include font-style($size: 1.2rem, $weight: 400);
+      white-space: nowrap;
+
+      .copyright {
+        align-self: center;
+      }
     }
   }
 
-  @include tablet {
+  @include medium {
     @include flex($align: flex-start);
-    min-width: 144rem;
-    margin: 0;
+    margin: 0 auto;
 
     .footer-content {
       @include flex($direction: row, $align: flex-start, $justify: center);
-      max-width: none;
       width: 100%;
-      padding: 6.5rem 9.6rem;
-      gap: 6.7rem;
+      padding: 6.5rem 9rem;
+      gap: 5.2rem;
 
       .company-info {
-        width: 37.1rem;
+        width: auto;
         gap: 3.3rem;
 
         .company-details {
           gap: 4rem;
 
           .company-description {
-            @include font-style($size: 1.4rem);
+            @include font-style($size: 1.2rem);
           }
         }
       }
 
       .footer-links-container {
-        gap: 6.7rem;
+        gap: 5.2rem;
 
         .footer-nav {
           gap: 3.8rem;
 
           .footer-links {
-            @include font-style($size: 1.4rem);
+            @include font-style($size: 1.2rem);
           }
         }
 
@@ -183,7 +182,7 @@
           gap: 3.1rem;
 
           .contact-list {
-            @include font-style($size: 1.4rem);
+            @include font-style($size: 1.2rem);
             gap: 1.6rem;
 
             .contact-item {
@@ -191,10 +190,10 @@
               gap: 1.6rem;
 
               .contact-icon {
-                width: 1.6rem;
+                width: auto;
               }
               .contact-address {
-                width: 20.8rem;
+                width: auto;
               }
             }
           }
@@ -203,22 +202,70 @@
 
       .footer-map {
         gap: 2rem;
-        width: 35.9rem;
-        @include font-style($size: 1.8rem);
-        font-size: 1.8rem;
+        flex: 1 0 14rem;
       }
     }
 
     .footer-bottom {
       @include flex($align: flex-start);
-      max-width: none;
       width: 100%;
-      padding: 2.4rem 9.6rem;
-      gap: 77.6rem;
+
       align-self: stretch;
-      @include font-style($size: 1.6rem);
-      .copyright {
-        align-self: center;
+
+      .footer-bottom__container {
+        padding: 2.4rem 9.6rem;
+        @include font-style($size: 1.4rem);
+        .copyright {
+          align-self: center;
+        }
+      }
+    }
+
+    @include pc {
+      .footer-content {
+        max-width: 144rem;
+        gap: 6.7rem;
+
+        .company-info {
+          .company-details {
+            .company-description {
+              @include font-style($size: 1.4rem);
+            }
+          }
+        }
+
+        .footer-links-container {
+          gap: 6.7rem;
+
+          .footer-nav {
+            .footer-links {
+              @include font-style($size: 1.4rem);
+            }
+          }
+
+          .footer-contact {
+            .contact-list {
+              @include font-style($size: 1.4rem);
+
+              .contact-item {
+                @include flex($align: flex-start);
+              }
+            }
+          }
+        }
+
+        .footer-map {
+          gap: 2rem;
+          flex: 0 1 36rem;
+          min-width: 24rem;
+        }
+      }
+
+      .footer-bottom {
+        .footer-bottom__container {
+          max-width: 144rem;
+          @include font-style($size: 1.6rem);
+        }
       }
     }
   }

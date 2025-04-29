@@ -1,30 +1,30 @@
 @use "../../abstracts/" as *;
 @use "../../components/service-card";
+@use "../../components/services-pc-card";
 
 .services-section {
   @include flex($direction: column, $justify: start, $align: center);
   padding: 0 1.9rem 0 2rem;
   @include font-style();
-  margin: 0 auto;
-  gap: 1.6rem;
+  margin: 0 7.1rem;
+  gap: 3rem;
 
   .section-header {
     @include flex($direction: column, $align: center);
     position: relative;
     padding: 0.6rem;
-    gap: 0.6rem;
     white-space: nowrap;
   }
 
   .section-title-bg {
     opacity: 0.5;
-    color: $section-title;
+    color: $grey;
     @include font-style($size: 6rem, $weight: 600);
-    z-index: 0;
+    z-index: -1;
   }
 
   .section-title {
-    color: $grey1;
+    color: $black;
     @include font-style($size: 3rem, $weight: 700);
     position: absolute;
     z-index: 1;
@@ -33,39 +33,39 @@
 
   .services-grid {
     @include flex($direction: column, $justify: start, $align: center);
+    width: 100%;
     gap: 0.8rem;
     @include font-style($height: 1.5, $weight: 500);
-    color: $primary-color;
+    color: $white;
 
     .services-row {
+      width: 100%;
+      height: auto;
+      align-items: stretch;
       @include flex($direction: column, $justify: start, $align: center);
 
-      &-small {
-        @include flex($direction: row, $justify: start, $align: start);
-        gap: 0.8rem;
-        font-size: 1.2rem;
-      }
-
+      &-small,
       &-special {
+        height: 100%;
         @include flex($direction: row, $justify: start, $align: start);
-        display: flex;
         gap: 0.8rem;
+        flex: 1;
       }
     }
   }
 
-  .services-tablet-grid {
+  .services-pc-grid {
     display: none;
   }
 
-  @include tablet {
+  @include medium {
     .services-grid {
       display: none;
     }
 
     @include flex($direction: column, $align: flex-start);
-    width: 144rem;
     padding: 6.4rem 9.6rem;
+    margin: 0 auto;
     gap: 4.8rem;
 
     .section-header {
@@ -77,28 +77,39 @@
     }
 
     .section-title-bg {
-      font-size: 9.6rem;
+      @include font-style($size: 7.8rem, $weight: 600);
       z-index: 0;
     }
 
     .section-title {
-      font-size: 4.8rem;
+      @include font-style($size: 3.3rem, $weight: 700);
       position: absolute;
       z-index: 1;
       transform: translateY(85%);
     }
 
-    .services-tablet-grid {
+    .services-pc-grid {
+      width: 100%;
       @include flex($direction: column, $justify: center, $align: center);
-      color: $primary-color;
-      @include font-style($weight: 500);
-      .services-tablet-row {
+      .services-pc-row {
         @include flex($justify: start, $align: end, $wrap: wrap);
         gap: 2rem;
         margin-top: 3.8rem;
         &:first-child {
           margin-top: 0;
         }
+      }
+    }
+
+    @include pc {
+      max-width: 144rem;
+
+      .section-title-bg {
+        @include font-style($size: 9.6rem, $weight: 600);
+      }
+
+      .section-title {
+        @include font-style($size: 4.8rem, $weight: 700);
       }
     }
   }

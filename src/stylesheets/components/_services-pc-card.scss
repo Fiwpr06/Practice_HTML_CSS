@@ -1,0 +1,44 @@
+@use "../abstracts/" as *;
+
+.services-pc-card {
+  @include flex($direction: column);
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .services-pc-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .services-pc-name {
+    @include font-style($size: 3.2rem, $weight: 500, $height: 1.5);
+    width: 100%;
+    position: absolute;
+    left: 3.3rem;
+    bottom: 2.9rem;
+    z-index: 1;
+    @include tablet {
+      @include font-style($size: 2.3rem, $weight: 500, $height: 1.5);
+    }
+  }
+
+  &-large {
+    width: calc(((100% - 4rem) / 3) * 2);
+    flex: 1;
+  }
+
+  &-medium {
+    width: calc((100% - 4rem) / 3);
+    flex: 0.49;
+  }
+
+  &:hover {
+    transition: all 0.3s ease;
+    transform: translateY(-0.8rem);
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);
+  }
+}

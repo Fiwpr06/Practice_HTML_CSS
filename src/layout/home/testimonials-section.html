@@ -9,18 +9,22 @@
 
   <div class="testimonials__slider">
     <div class="testimonials__slider-container">
-      <button
-        class="testimonials__arrow testimonials__arrow--prev testimonials__tablet"
+      <input type="radio" name="testimonial" id="slide1" checked hidden />
+      <input type="radio" name="testimonial" id="slide2" hidden />
+
+      <label
+        for="slide1"
+        class="testimonials__arrow testimonials__arrow--prev testimonials__pc"
       >
         <img
           src="../assets/icon/Arrow 2.svg"
           alt="Previous"
           class="testimonials__arrow-icon"
         />
-      </button>
+      </label>
 
       <article class="testimonials__card">
-        <div class="testimonials__card-content">
+        <div class="testimonials__card-content card1">
           <div class="testimonials__user">
             <div class="testimonials__user-images">
               <img
@@ -72,40 +76,89 @@
             />
           </div>
         </div>
+
+        <div class="testimonials__card-content card2">
+          <div class="testimonials__user">
+            <div class="testimonials__user-images">
+              <img
+                src="../assets/images/Rectangle 6.webp"
+                alt="User"
+                class="testimonials__user-image"
+              />
+              <img
+                src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcS2CHe7B3Ca4IP1HBjFALkqkeU43BjeDYAtGuP32PxP2XPSZWnByb0xArOAOEdP5lcykP_lUkxAM4HUkK8"
+                alt="User"
+                class="testimonials__user-image"
+              />
+            </div>
+
+            <div class="testimonials__user-info">
+              <h4 class="testimonials__user-name">Elon Musk</h4>
+              <p class="testimonials__user-position">CEO of Tesla and SpaceX</p>
+            </div>
+          </div>
+
+          <div class="testimonials__text-container">
+            <div class="testimonials__text-wrapper">
+              <img
+                src="../assets/icon/pngwing 3.webp"
+                alt="Quote"
+                class="testimonials__quote-icon"
+              />
+              <p class="testimonials__text">
+                “When something is important enough, you do it even if the odds
+                are not in your favor.”
+              </p>
+              <div class="testimonials__quote-end-container">
+                <img
+                  src="../assets/icon/pngwing 2.webp"
+                  alt="Quote End"
+                  class="testimonials__quote-end-icon"
+                />
+              </div>
+            </div>
+            <img
+              src="../assets/icon/Start.svg"
+              alt="Testimonial Start"
+              class="testimonials__start-icon"
+            />
+          </div>
+        </div>
       </article>
 
-      <button
-        class="testimonials__arrow testimonials__arrow--next testimonials__tablet"
+      <label
+        for="slide2"
+        class="testimonials__arrow testimonials__arrow--next testimonials__pc"
       >
         <img
           src="../assets/icon/Arrow 2.svg"
           alt="Next"
           class="testimonials__arrow-icon"
         />
-      </button>
+      </label>
     </div>
     <div class="testimonials__both-arrow">
-      <button class="testimonials__arrow testimonials__arrow--prev">
+      <label for="slide1" class="testimonials__arrow testimonials__arrow--prev">
         <img
           src="../assets/icon/Arrow 2.svg"
           alt="Previous"
           class="testimonials__arrow-icon"
         />
-      </button>
-      <button class="testimonials__arrow testimonials__arrow--next">
+      </label>
+      <label for="slide2" class="testimonials__arrow testimonials__arrow--next">
         <img
           src="../assets/icon/Arrow 2.svg"
           alt="Next"
           class="testimonials__arrow-icon"
         />
-      </button>
+      </label>
     </div>
   </div>
 
   <div class="testimonials__dots">
     <span class="dot"></span>
-    <span class="dot dot-active"></span>
-    <span class="dot"></span>
+    <label for="slide1" class="dot dot-active"></label>
+    <label for="slide2" class="dot"></label>
     <span class="dot"></span>
   </div>
 </section>

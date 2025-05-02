@@ -146,7 +146,7 @@
   }
 
   @include pc {
-    height: 13.8rem;
+    height: fit-content;
 
     .top-nav {
       .note {

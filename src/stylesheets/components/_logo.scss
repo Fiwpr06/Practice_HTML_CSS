@@ -19,7 +19,7 @@
 
     &__trans {
       color: #1c1c1c;
-      color: $trans-color;
+      color: $dark;
       @include font-style($family: Risque, $weight: 400);
     }
   }
@@ -28,7 +28,7 @@
     width: 2.6rem;
     height: 2.8rem;
     stroke-width: 0.07rem;
-    stroke: $trans-color;
+    stroke: $dark;
   }
 
   &:hover {

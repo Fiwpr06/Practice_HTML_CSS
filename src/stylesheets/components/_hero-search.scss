@@ -1,57 +1,60 @@
 @use "../abstracts/" as *;
 
 .hero__search {
-  width: 29rem;
-  height: 4rem;
   @include flex($direction: row, $align: center);
+  border-radius: 0.5rem;
+  border: 0.01rem solid $dark transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 3.5rem;
+  width: 29rem;
   position: relative;
   z-index: 1;
 
   input {
-    flex: 1 1 auto;
-    height: 100%;
-    padding: 1.13rem 1.2rem 1.1rem 1.9rem;
-    color: $search-color;
-    @include font-style($family: Poppins, $size: 0.8rem, $weight: 400);
-    border: 0.1rem solid $search-color;
-    border-radius: 0.5rem 0 0 0.5rem;
+    width: 100%;
+    padding: 1.1rem 1.6rem;
+    color: $dark;
+    @include font-style($family: Poppins, $size: 0.8rem);
   }
 
   button {
-    flex: 0 0 8rem;
+    position: absolute;
+    right: 0;
     height: 100%;
-    color: $primary-color;
-    @include font-style($family: Poppins, $size: 0.8rem, $weight: 400);
+    color: $white;
+    @include font-style($family: Poppins, $size: 0.8rem);
     background: $primary;
     padding: 1.1rem 1.6rem;
-    border: 0.1rem solid transparent;
-    border-radius: 0 0.5rem 0.5rem 0;
-    white-space: nowrap;
     cursor: pointer;
     z-index: 2;
   }
 
   @include tablet {
-    width: 40rem;
-    height: 5.6rem;
-
+    width: 35rem;
+    height: 4.5rem;
     input {
-      flex: 1 1 auto;
-      height: 100%;
+      @include font-style($family: Poppins, $size: 1rem);
+    }
+
+    button {
+      @include font-style($family: Poppins, $size: 1rem);
+    }
+  }
+
+  @include pc {
+    width: 47rem;
+    height: 5.6rem;
+    border-radius: 0.8rem;
+    input {
       padding: 1.8rem 0 1.8rem 1.8rem;
-      color: $search-color;
       @include font-style($family: Poppins, $size: 1.3rem);
-      border-radius: 0.8rem 0 0 0.8rem;
     }
 
     button {
       width: 13rem;
-      flex: 0 0 8rem;
-      height: 100%;
-      color: $primary-color;
       @include font-style($family: Poppins, $size: 1.3rem);
       padding: 1.8rem 2.6rem;
-      border-radius: 0 0.8rem 0.8rem 0;
     }
   }
 }

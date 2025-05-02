@@ -2,9 +2,12 @@
 
 .header-container {
   position: relative;
+  width: 100%;
   z-index: 1;
 
   .header__background {
+    pointer-events: none;
+    user-select: none;
     position: absolute;
     top: 7rem;
     left: 0;
@@ -12,6 +15,11 @@
     height: 100%;
     z-index: -1;
     @include flex($justify: center, $align: center);
+
+    .background-img1 {
+      width: 100%;
+      height: 80rem;
+    }
 
     .background-img {
       display: none;
@@ -24,28 +32,31 @@
   }
 
   .header__bottom {
+    @include flex($justify: center, $align: center);
     margin: 0 auto;
     width: 100%;
-    max-width: 33.887rem;
-    height: 57.2rem;
     padding: 1rem 0;
     position: relative;
 
     .hero-background {
+      pointer-events: none;
+      user-select: none;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: -1;
+      @include flex($justify: center, $align: center);
       background: lightgray 0% 0% / 3.33rem 3.33rem repeat;
       mix-blend-mode: soft-light;
       opacity: 0.4;
-      z-index: 1;
-      @include flex($justify: center, $align: center);
 
       img {
-        width: 36.1rem;
-        height: 60.3rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
     }
 
@@ -53,8 +64,8 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 33.887rem;
-      height: 48.658rem;
+      min-height: 49rem;
+      margin: 0 7.1rem;
       padding: 4rem 1.2rem;
       border: 0.0663rem solid #10254d;
       border-radius: 0.5rem;
@@ -62,31 +73,24 @@
 
       .hero {
         width: 100%;
-        max-width: 31.487rem;
-        height: 40.658rem;
+        height: auto;
         gap: 4.5rem;
         @include flex($direction: column, $align: center);
 
         &__content {
           width: 100%;
-          height: 22.474rem;
-          gap: 1.4817rem;
+          gap: 1.5rem;
           @include flex($direction: column, $align: flex-start);
 
           .hero__text {
             width: 100%;
-            gap: 1.4817rem;
-            @include font-style(
-              $size: 1.1113rem,
-              $weight: 400,
-              $height: 1.6669rem
-            );
-            color: $primary-color;
+
+            gap: 1.5rem;
+            @include font-style($size: 1.2rem, $weight: 400, $height: 1.7rem);
             @include flex($direction: column, $align: flex-start);
 
             .hero__heading {
-              height: 9.388rem;
-              gap: 0.9878rem;
+              gap: 1rem;
               @include flex($direction: column, $align: flex-start);
 
               h2 {
@@ -94,7 +98,7 @@
                   $size: 0.7rem,
                   $weight: 500,
                   $height: 1.7rem,
-                  $spacing: 0.1185rem
+                  $spacing: 0.2rem
                 );
                 font-variant: small-caps;
               }
@@ -108,13 +112,12 @@
 
         &__img {
           width: 100%;
-          max-width: 29.0297rem;
-          height: 13.6845rem;
+          height: auto;
 
           img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
           }
         }
@@ -123,88 +126,99 @@
   }
 
   @include tablet {
-    min-width: 144rem;
-    height: 83.8rem;
+    .header__bottom {
+      padding: 0 7rem;
+
+      .hero-container {
+        padding: 3.3rem 3rem 2.8rem;
+        @include flex($justify: center, $align: center);
+
+        .hero {
+          @include flex($direction: row, $justify: center, $align: center);
+
+          &__content {
+            @include flex(
+              $direction: column,
+              $justify: center,
+              $align: flex-start
+            );
+          }
+
+          &__img {
+            width: 66rem;
+            height: auto;
+            @include flex($justify: center, $align: center);
+          }
+        }
+      }
+    }
+  }
+
+  @include pc {
+    margin: 0 auto;
+    width: 100%;
     @include flex($direction: column, $align: center);
     gap: 4.2rem;
 
     .header__background {
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      @include flex($justify: center, $align: center);
       .background-img1 {
         display: none;
       }
       .background-img {
         width: 100%;
         height: auto;
-        object-fit: cover;
+        object-fit: contain;
         display: block;
       }
     }
 
     .header__bottom {
-      padding: 2.3rem 1.1rem;
-      max-width: 130rem;
+      width: 100%;
+      padding: 2.3rem 6.6rem;
+      max-width: 144rem;
 
       .hero-background {
-        img {
-          width: 132.1rem;
-          height: 100%;
-        }
+        width: 100%;
+        max-width: 134rem;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       .hero-container {
-        max-width: none;
+        margin: 0;
         width: 100%;
-        height: 100%;
-        padding: 3.3rem 2.9rem 2.8rem;
+        padding: 0 3rem;
         @include flex($justify: center, $align: center);
 
         .hero {
-          max-width: none;
           width: 100%;
-          height: 100%;
           @include flex($direction: row, $justify: center, $align: center);
           gap: 4rem;
 
           .hero__content {
-            max-width: 49.8rem;
+            max-width: 51rem;
             @include flex(
               $direction: column,
               $justify: center,
               $align: flex-start
             );
             gap: 3.2rem;
-          }
 
-          .hero__text {
-            max-width: 46.5rem;
-            gap: 3.2rem;
-            @include font-style($size: 1.8rem, $height: 1.5, $weight: 400);
-
-            .hero__heading {
-              height: auto;
+            .hero__text {
               gap: 3.2rem;
+              @include font-style($size: 1.8rem, $height: 1.5, $weight: 400);
 
-              h2 {
-                @include font-style($size: 1.4rem, $spacing: 0.2rem);
+              .hero__heading {
+                gap: 3.2rem;
+
+                h2 {
+                  @include font-style($size: 1.4rem, $spacing: 0.2rem);
+                }
+
+                h1 {
+                  @include font-style($size: 4.8rem, $height: 125%);
+                }
               }
-
-              h1 {
-                @include font-style($size: 4.8rem, $height: 125%);
-              }
-            }
-          }
-
-          .hero__img {
-            max-width: 66.3rem;
-            height: 31.3rem;
-            @include flex($justify: center, $align: center);
-
-            img {
-              object-fit: contain;
             }
           }
         }

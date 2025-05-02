@@ -2,23 +2,17 @@
 $primary-font: Rubik;
 
 //Color
-$background-color: #fff;
-$primary-color: #fff;
+$white: #fff;
 $primary: #1341ec;
 $text: #fafafa;
-$neutral-100: #262626;
-$neutral-80: #5d5f61;
-$grey1: #000;
-$grey6: #f2f2f2;
-$grey5: #e0e0e0;
-$search-color: #1b1a1a;
-$trans-color: #1c1c1c;
-$section-title: #e5e5e5;
-$about-bg: #cfcfcf;
+$neutral: #5d5f61;
+$black: #000;
+$grey: #e0e0e0;
+$dark: #262626;
 $button: #1e3c5d;
 
 //Breakpoint
 $medium: 768px;
-$extra-lager: 1200px;
+$extra-large: 1200px;
 $mobile: calc($medium - 1px);
-$tablet: calc($extra-lager - 1px);
+$tablet: calc($extra-large - 1px);

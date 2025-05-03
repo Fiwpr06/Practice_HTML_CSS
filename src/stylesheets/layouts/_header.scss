@@ -4,224 +4,164 @@
   position: relative;
   width: 100%;
   z-index: 1;
+  @include flex($direction: column, $align: center);
 
-  .header__background {
-    pointer-events: none;
-    user-select: none;
-    position: absolute;
-    top: 7rem;
-    left: 0;
+  .navigation-container {
     width: 100%;
-    height: 100%;
-    z-index: -1;
-    @include flex($justify: center, $align: center);
-
-    .background-img1 {
-      width: 100%;
-      height: 80rem;
-    }
-
-    .background-img {
-      display: none;
-    }
-  }
-
-  .header__top {
+    height: auto;
+    background-color: $white;
     @include flex($direction: column, $align: center);
-    align-self: stretch;
-  }
 
-  .header__bottom {
-    @include flex($justify: center, $align: center);
-    margin: 0 auto;
-    width: 100%;
-    padding: 1rem 0;
-    position: relative;
-
-    .hero-background {
-      pointer-events: none;
-      user-select: none;
-      position: absolute;
-      top: 0;
-      left: 0;
+    .top-nav {
       width: 100%;
-      height: 100%;
-      z-index: -1;
+      padding: 0.6rem 0;
+      background-color: $black;
       @include flex($justify: center, $align: center);
-      background: lightgray 0% 0% / 3.33rem 3.33rem repeat;
-      mix-blend-mode: soft-light;
-      opacity: 0.4;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+      .note {
+        color: $white;
+        @include font-style($size: 0.8rem, $height: 2.1, $weight: 400);
+
+        .important-note {
+          white-space: nowrap;
+          @include font-style($weight: 600);
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+        }
+
+        .mark {
+          @include font-style($weight: 600);
+        }
       }
     }
 
-    .hero-container {
-      position: relative;
-      z-index: 1;
+    .navbar {
       width: 100%;
-      min-height: 49rem;
-      margin: 0 7.1rem;
-      padding: 4rem 1.2rem;
-      border: 0.0663rem solid #10254d;
-      border-radius: 0.5rem;
-      @include flex($justify: center, $align: flex-start);
+      padding: 0.8rem 0;
+      @include flex($justify: space-between, $align: center);
 
-      .hero {
-        width: 100%;
-        height: auto;
-        gap: 4.5rem;
-        @include flex($direction: column, $align: center);
+      .nav-list {
+        height: 2.1rem;
+        @include flex($justify: center);
+        gap: 4rem;
 
-        &__content {
-          width: 100%;
-          gap: 1.5rem;
-          @include flex($direction: column, $align: flex-start);
+        .list-items {
+          @include flex($direction: row, $align: center);
+          list-style: none;
+          gap: 2rem;
+          margin: 0;
+          padding: 0;
 
-          .hero__text {
-            width: 100%;
+          .nav-item a {
+            white-space: nowrap;
+            color: $dark;
+            font-family: $primary-font;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 2.1rem;
+            text-decoration: none;
+            display: inline-block;
 
-            gap: 1.5rem;
-            @include font-style($size: 1.2rem, $weight: 400, $height: 1.7rem);
-            @include flex($direction: column, $align: flex-start);
+            &:hover {
+              color: $primary;
+              transform: scale(1.2);
+            }
 
-            .hero__heading {
-              gap: 1rem;
-              @include flex($direction: column, $align: flex-start);
-
-              h2 {
-                @include font-style(
-                  $size: 0.7rem,
-                  $weight: 500,
-                  $height: 1.7rem,
-                  $spacing: 0.2rem
-                );
-                font-variant: small-caps;
-              }
-
-              h1 {
-                @include font-style($size: 3rem, $weight: 600, $height: 3.7rem);
-              }
+            &:focus {
+              outline: none;
+              box-shadow: 0 0 0.5rem $primary;
             }
           }
         }
-
-        &__img {
-          width: 100%;
-          height: auto;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-          }
-        }
       }
-    }
-  }
 
-  @include tablet {
-    .header__bottom {
-      padding: 0 7rem;
-
-      .hero-container {
-        padding: 3.3rem 3rem 2.8rem;
+      .contact-us {
         @include flex($justify: center, $align: center);
-
-        .hero {
-          @include flex($direction: row, $justify: center, $align: center);
-
-          &__content {
-            @include flex(
-              $direction: column,
-              $justify: center,
-              $align: flex-start
-            );
-          }
-
-          &__img {
-            width: 66rem;
-            height: auto;
-            @include flex($justify: center, $align: center);
-          }
-        }
+        @include font-style($size: 1.6rem);
+        padding: 1rem 2rem;
+        border-radius: 0.6rem;
+        background: $primary;
+        color: $white;
+        font-size: 1.6rem;
+        white-space: nowrap;
+        cursor: pointer;
       }
-    }
-  }
 
-  @include pc {
-    margin: 0 auto;
-    width: 100%;
-    @include flex($direction: column, $align: center);
-    gap: 4.2rem;
-
-    .header__background {
-      .background-img1 {
+      .menu-button {
         display: none;
-      }
-      .background-img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        display: block;
+        @include bg-img("../assets/icon/Menu.svg");
+        width: 2rem;
+        height: 1.7rem;
+        border: none;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
 
-    .header__bottom {
-      width: 100%;
-      padding: 2.3rem 6.6rem;
-      max-width: 144rem;
+    @include mobile {
+      .navbar {
+        .nav-list {
+          display: none;
+        }
 
-      .hero-background {
-        width: 100%;
-        max-width: 134rem;
-        left: 50%;
-        transform: translateX(-50%);
+        .contact-us {
+          display: none;
+        }
+
+        .menu-button {
+          display: flex;
+        }
+      }
+    }
+
+    @include tablet {
+      height: auto;
+      .top-nav {
+        height: 5.3rem;
+        padding: 1.6rem 0;
+
+        .note {
+          @include font-style($size: 1.2rem);
+        }
       }
 
-      .hero-container {
-        margin: 0;
-        width: 100%;
-        padding: 0 3rem;
-        @include flex($justify: center, $align: center);
+      .navbar {
+        padding: 2rem 6.2rem;
+        gap: 1rem;
 
-        .hero {
-          width: 100%;
-          @include flex($direction: row, $justify: center, $align: center);
-          gap: 4rem;
-
-          .hero__content {
-            max-width: 51rem;
-            @include flex(
-              $direction: column,
-              $justify: center,
-              $align: flex-start
-            );
-            gap: 3.2rem;
-
-            .hero__text {
-              gap: 3.2rem;
-              @include font-style($size: 1.8rem, $height: 1.5, $weight: 400);
-
-              .hero__heading {
-                gap: 3.2rem;
-
-                h2 {
-                  @include font-style($size: 1.4rem, $spacing: 0.2rem);
-                }
-
-                h1 {
-                  @include font-style($size: 4.8rem, $height: 125%);
-                }
-              }
+        .nav-list {
+          .list-items {
+            .nav-item a {
+              @include font-style($size: 1.2rem);
             }
           }
         }
+
+        .contact-us {
+          @include font-style($size: 1.2rem);
+        }
+      }
+    }
+
+    @include pc {
+      height: auto;
+
+      .top-nav {
+        .note {
+          @include font-style($size: 1.4rem, $height: 2.1, $weight: 400);
+        }
+      }
+
+      .navbar {
+        max-width: 124rem;
+        height: 8.5rem;
+        padding: 2rem 0rem;
+        gap: 1rem;
       }
     }
   }

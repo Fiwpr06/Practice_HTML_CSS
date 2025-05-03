@@ -7,7 +7,8 @@
   white-space: nowrap;
   overflow: hidden;
   height: 3.5rem;
-  width: 29rem;
+  width: 80%;
+  max-width: 33rem;
   position: relative;
   z-index: 1;
 
@@ -21,18 +22,20 @@
   button {
     position: absolute;
     right: 0;
+    width: 30%;
     height: 100%;
     color: $white;
     @include font-style($family: Poppins, $size: 0.8rem);
+    white-space: wrap;
     background: $primary;
-    padding: 1.1rem 1.6rem;
+    padding: 1.1rem auto;
     cursor: pointer;
     z-index: 2;
   }
 
   @include tablet {
-    width: 35rem;
     height: 4.5rem;
+    max-width: none;
     input {
       @include font-style($family: Poppins, $size: 1rem);
     }
@@ -43,8 +46,8 @@
   }
 
   @include pc {
-    width: 47rem;
     height: 5.6rem;
+    max-width: none;
     border-radius: 0.8rem;
     input {
       padding: 1.8rem 0 1.8rem 1.8rem;
@@ -52,9 +55,8 @@
     }
 
     button {
-      width: 13rem;
+      white-space: nowrap;
       @include font-style($family: Poppins, $size: 1.3rem);
-      padding: 1.8rem 2.6rem;
     }
   }
 }

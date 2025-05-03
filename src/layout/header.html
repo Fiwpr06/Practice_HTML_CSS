@@ -1,81 +1,25 @@
 <header class="header-container">
-  <div class="header__background">
-    <img
-      src="../assets/images/background.webp"
-      alt="Background for header"
-      class="background-img"
-      loading="lazy"
-    />
-    <img
-      src="../assets/images/background1.webp"
-      srcset="
-        ../assets/images/background1.webp 360w,
-        ../assets/images/background2.webp 540w
-      "
-      alt="Background for header"
-      class="background-img1"
-    />
-  </div>
-  <section class="header__top">
-    <section class="navigation-container">
-      <include src="./components/top-nav.html"></include>
-      <div class="navbar">
-        <include src="./components/logo.html"></include>
-        <include src="./components/nav-list.html"></include>
-        <button class="contact-us" type="button">Contact Us</button>
-        <button class="menu-button" type="button" aria-label="Menu"></button>
-      </div>
-    </section>
-  </section>
-
-  <section class="header__bottom">
-    <div class="hero-background">
-      <img
-        src="../assets/images/image2.webp"
-        srcset="
-          ../assets/images/image2.webp 1200w,
-          ../assets/images/image1.webp  780w
-        "
-        alt="Background for hero"
-      />
+  <section class="navigation-container">
+    <div class="top-nav">
+      <h2 class="note">
+        <span class="important-note">Important Note</span>
+        <span class="mark">:</span> if you completely feel secure then transfer
+        your money
+      </h2>
     </div>
-    <section class="hero-container">
-      <div class="hero">
-        <div class="hero__content">
-          <div class="hero__text">
-            <div class="hero__heading">
-              <h2>Ship to and from anywhere in the world</h2>
-              <h1>Find the best freight quote</h1>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Aliquam nibh quam vivamus
-              ultricies semper sed gravida dictumst nunc. Ut ac luctus facilisis
-              ipsum mauris volutpat elementum ut. Volutpat nullam tellus egestas
-              scelerisque tellus
-            </p>
-          </div>
-
-          <div class="hero__search">
-            <input
-              type="text"
-              placeholder="Search for Container NO or Booking ID"
-            />
-            <button>Track Order</button>
-          </div>
-        </div>
-
-        <figure class="hero__img">
-          <img
-            src="../assets/images/Map.webp"
-            srcset="
-              ../assets/images/Map.webp  660w,
-              ../assets/images/Map2.webp 290w
-            "
-            alt="Map showing our service locations"
-            loading="lazy"
-          />
-        </figure>
-      </div>
-    </section>
+    <div class="navbar">
+      <include src="./components/logo.html"></include>
+      <nav class="nav-list">
+        <ul class="list-items">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#">About Us</a></li>
+          <li class="nav-item"><a href="#">Services</a></li>
+          <li class="nav-item"><a href="#">Testimonials</a></li>
+          <li class="nav-item"><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button class="contact-us" type="button">Contact Us</button>
+      <button class="menu-button" type="button" aria-label="Menu"></button>
+    </div>
   </section>
 </header>

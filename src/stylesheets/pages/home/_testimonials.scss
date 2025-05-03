@@ -3,7 +3,8 @@
 .testimonials {
   @include flex($direction: column, $justify: center, $align: center);
   margin: 0 auto;
-  padding: 0 9rem;
+
+  padding: 0 5.4rem;
   width: 100%;
 
   &__header {
@@ -44,7 +45,7 @@
     @include flex($direction: column, $align: center);
     width: 100%;
     gap: 4rem;
-
+    overflow-x: hidden;
     &-container {
       width: 100%;
     }
@@ -87,10 +88,15 @@
 
     &-images {
       position: relative;
+      object-fit: contain;
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
     }
 
     &-image {
-      aspect-ratio: 1.03;
       object-fit: contain;
       object-position: center;
       width: 15.3rem;
@@ -172,9 +178,14 @@
   }
 
   &__start-icon {
-    width: auto;
-    height: auto;
     margin-top: 1rem;
+
+    object-fit: contain;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
     &:hover {
       transition: all 0.3s ease;
@@ -292,6 +303,10 @@
       padding: 0;
       text-align: center;
 
+      &-images {
+        max-width: 25rem;
+      }
+
       &-image {
         width: 100%;
         flex: 0 1 33rem;
@@ -326,19 +341,9 @@
       padding-right: 0.8rem;
     }
 
-    &__quote-icon {
-      aspect-ratio: 1.37;
-      width: 2rem;
-    }
-
     &__text {
       @include font-style($size: 1.2rem);
       margin-left: 2rem;
-    }
-
-    &__quote-end-icon {
-      aspect-ratio: 1.47;
-      width: 2rem;
     }
 
     &__both-arrow {
@@ -379,6 +384,11 @@
       }
 
       &__user {
+        &-images {
+          max-width: none;
+          min-width: 18rem;
+        }
+
         &-image {
           width: 100%;
           flex: 1 1 35rem;

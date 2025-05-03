@@ -6,7 +6,7 @@
   @include flex($direction: column, $justify: start, $align: center);
   padding: 0 1.9rem 0 2rem;
   @include font-style();
-  margin: 0 7.1rem;
+  margin: 0 3.4rem;
   gap: 3rem;
 
   .section-header {
@@ -50,6 +50,25 @@
         @include flex($direction: row, $justify: start, $align: start);
         gap: 0.8rem;
         flex: 1;
+        @media (max-width: 360px) {
+          @include flex($direction: column, $justify: start, $align: center);
+        }
+      }
+    }
+
+    @media (max-width: 360px) {
+      .services-grid {
+        .services-row-small,
+        .services-row-special {
+          flex-direction: column;
+
+          .service-card-medium,
+          .service-card-small,
+          .service-card-large-special {
+            width: 100% !important;
+            flex: unset;
+          }
+        }
       }
     }
   }

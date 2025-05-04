@@ -34,7 +34,7 @@ body {
   color: $white;
   background-color: $white;
   @include font-style($size: 0.8rem, $weight: 400, $height: 1.5rem);
-
+  font-family: $primary-font;
   @include tablet {
     @include font-style($size: 1.3rem);
   }

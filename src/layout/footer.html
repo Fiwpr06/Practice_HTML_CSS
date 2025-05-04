@@ -24,49 +24,37 @@
       </div>
     </div>
 
-    <div class="footer-links-container">
-      <nav class="footer-nav">
-        <h3 class="footer-heading">Pages</h3>
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Products</a></li>
-        </ul>
-      </nav>
-
-      <div class="footer-contact">
-        <h3 class="footer-heading">Contact</h3>
-        <ul class="contact-list">
-          <li class="contact-item">
-            <img
-              src="../assets/icon/ant-design_phone-filled.svg"
-              alt="Phone"
-              class="contact-icon"
-            />
-            <span class="contact-text">(406) 555-0120</span>
-          </li>
-          <li class="contact-item">
-            <img
-              src="../assets/icon/dashicons_email.svg"
-              alt="Email"
-              class="contact-icon"
-            />
-            <span class="contact-text">zyncabiotics123@gmail.com</span>
-          </li>
-          <li class="contact-item">
-            <img
-              src="../assets/icon/fa6-solid_location-dot.svg"
-              alt="Location"
-              class="contact-icon"
-            />
-            <address class="contact-address">
-              2972 Jamshedpur, Jharkhand Pin-831015
-            </address>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <include
+      src="./components/footer-links.html"
+      locals='{
+        "pages": [
+          { "label": "Home", "href": "#" },
+          { "label": "About Us", "href": "#" },
+          { "label": "Blog", "href": "#" },
+          { "label": "Products", "href": "#" }
+        ],
+        "contacts": [
+          {
+            "icon": "../assets/icon/ant-design_phone-filled.svg",
+            "alt": "Phone",
+            "text": "(406) 555-0120",
+            "isAddress": false
+          },
+          {
+            "icon": "../assets/icon/dashicons_email.svg",
+            "alt": "Email",
+            "text": "zyncabiotics123@gmail.com",
+            "isAddress": false
+          },
+          {
+            "icon": "../assets/icon/fa6-solid_location-dot.svg",
+            "alt": "Location",
+            "text": "2972 Jamshedpur, Jharkhand Pin-831015",
+            "isAddress": true
+          }
+        ]
+      }'
+    ></include>
 
     <div class="footer-map">
       <h3 class="footer-heading">Maps Location</h3>

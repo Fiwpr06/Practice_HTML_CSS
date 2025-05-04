@@ -1,0 +1,39 @@
+<form class="contact-form">
+  <each loop="row in {{ formRows }}">
+    <div class="form-row">
+      <each loop="field in row">
+        <div class="form-group">
+          <if condition="field.dropdown">
+            <div class="dropdown-container">
+              <input
+                id="interested-in-input"
+                class="form-input dropdown-label"
+                type="text"
+                placeholder="{{ field.placeholder }}"
+              />
+              <img
+                src="{{ field.icon }}"
+                class="dropdown-arrow"
+                alt="Dropdown arrow"
+              />
+            </div>
+            <hr class="input-line" />
+          </if>
+          <if condition="!field.dropdown">
+            <input
+              type="{{ field.type }}"
+              class="form-input"
+              placeholder="{{ field.placeholder }}"
+            />
+            <hr class="input-line" />
+          </if>
+        </div>
+      </each>
+    </div>
+  </each>
+
+  <div class="form-group message-group">
+    <input class="form-input" type="text" placeholder="Message" />
+    <hr class="input-line" />
+  </div>
+</form>

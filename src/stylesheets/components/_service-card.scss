@@ -21,6 +21,18 @@
     bottom: 1.1rem;
     z-index: 1;
     width: 100%;
+
+    @include medium {
+      @include font-style($size: 2.3rem, $weight: 500, $height: 1.5);
+      left: 2rem;
+      bottom: 1.5rem;
+
+      @include pc {
+        @include font-style($size: 3.2rem, $weight: 500, $height: 1.5);
+        left: 4.2rem;
+        bottom: 2.8rem;
+      }
+    }
   }
 
   &-large {
@@ -45,6 +57,12 @@
     &-small,
     &-large-special {
       width: 100%;
+    }
+
+    .service-image {
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
     }
   }
 

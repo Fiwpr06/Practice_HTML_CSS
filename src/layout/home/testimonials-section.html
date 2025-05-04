@@ -24,106 +24,29 @@
       </label>
 
       <article class="testimonials__card">
-        <div class="testimonials__card-content card1">
-          <div class="testimonials__user">
-            <div class="testimonials__user-images">
-              <img
-                src="../assets/images/Rectangle 6.webp"
-                alt="User"
-                class="testimonials__user-image"
-              />
-              <img
-                src="../assets/images/Rectangle 483.webp"
-                alt="User"
-                class="testimonials__user-image"
-              />
-            </div>
+        <include
+          src="./components/testimonial-card.html"
+          locals='{
+          "cardClass": "card1",
+          "userImage1": "../assets/images/Rectangle 6.webp",
+          "userImage2": "../assets/images/Rectangle 483.webp",
+          "userName": "Marry Welsom",
+          "userPosition": "Founder and CEO OF PREMIUM",
+          "testimonialText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut  aliquip ex ecommodo consequat. Duis aute irure dolor in reprehenderit Duis aute irure dolor in reprehenderit"
+        }'
+        ></include>
 
-            <div class="testimonials__user-info">
-              <h4 class="testimonials__user-name">Marry Welsom</h4>
-              <p class="testimonials__user-position">
-                Founder and CEO OF PREMIUM
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonials__text-container">
-            <div class="testimonials__text-wrapper">
-              <img
-                src="../assets/icon/pngwing 3.webp"
-                alt="Quote"
-                class="testimonials__quote-icon"
-              />
-              <p class="testimonials__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ecommodo consequat. Duis aute irure dolor in
-                reprehenderit Duis aute irure dolor in reprehenderit
-              </p>
-              <div class="testimonials__quote-end-container">
-                <img
-                  src="../assets/icon/pngwing 2.webp"
-                  alt="Quote End"
-                  class="testimonials__quote-end-icon"
-                />
-              </div>
-            </div>
-            <img
-              src="../assets/icon/Start.svg"
-              alt="Testimonial Start"
-              class="testimonials__start-icon"
-            />
-          </div>
-        </div>
-
-        <div class="testimonials__card-content card2">
-          <div class="testimonials__user">
-            <div class="testimonials__user-images">
-              <img
-                src="../assets/images/Rectangle 6.webp"
-                alt="User"
-                class="testimonials__user-image"
-              />
-              <img
-                src="../assets/images/Rectangle 484.webp"
-                alt="User"
-                class="testimonials__user-image"
-              />
-            </div>
-
-            <div class="testimonials__user-info">
-              <h4 class="testimonials__user-name">Elon Musk</h4>
-              <p class="testimonials__user-position">CEO of Tesla and SpaceX</p>
-            </div>
-          </div>
-
-          <div class="testimonials__text-container">
-            <div class="testimonials__text-wrapper">
-              <img
-                src="../assets/icon/pngwing 3.webp"
-                alt="Quote"
-                class="testimonials__quote-icon"
-              />
-              <p class="testimonials__text">
-                “When something is important enough, you do it even if the odds
-                are not in your favor.”
-              </p>
-              <div class="testimonials__quote-end-container">
-                <img
-                  src="../assets/icon/pngwing 2.webp"
-                  alt="Quote End"
-                  class="testimonials__quote-end-icon"
-                />
-              </div>
-            </div>
-            <img
-              src="../assets/icon/Start.svg"
-              alt="Testimonial Start"
-              class="testimonials__start-icon"
-            />
-          </div>
-        </div>
+        <include
+          src="./components/testimonial-card.html"
+          locals='{
+          "cardClass": "card2",
+          "userImage1": "../assets/images/Rectangle 6.webp",
+          "userImage2": "../assets/images/Rectangle 484.webp",
+          "userName": "Elon Musk",
+          "userPosition": "CEO of Tesla and SpaceX",
+          "testimonialText": "“When something is important enough, you do it even if the odds are not in your favor.”"
+        }'
+        ></include>
       </article>
 
       <label

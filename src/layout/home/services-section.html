@@ -3,7 +3,154 @@
     <span class="section-title-bg">Services</span>
     <h2 class="section-title">Services</h2>
   </div>
-  <include src="./components/services-grid.html" locals="{}"> </include>
+  <div class="services-grid">
+    <div class="services-row">
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "service-card-large",
+          "imageSrc": "../assets/images/Rectangle 960.webp",
+          "altText": "Rail Express",
+          "title": "Rail Express"
+        }'
+      ></include>
+    </div>
 
-  <include src="./components/services-pc-grid.html" locals="{}"> </include>
+    <div class="services-row services-row-small">
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "service-card-medium",
+          "imageSrc": "../assets/images/Rectangle 969.webp",
+          "altText": "Surface Express",
+          "title": "Surface Express"
+        }'
+      ></include>
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "service-card-medium",
+          "imageSrc": "../assets/images/Rectangle 963.webp",
+          "altText": "Air Express",
+          "title": "Air Express"
+        }'
+      ></include>
+    </div>
+
+    <div class="services-row services-row-small">
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "service-card-medium",
+          "imageSrc": "../assets/images/Rectangle 969.webp",
+          "altText": "Surface Express",
+          "title": "Surface Express"
+        }'
+      ></include>
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "service-card-medium",
+          "imageSrc": "../assets/images/Rectangle 961.webp",
+          "altText": "Near By Furniture",
+          "title": "Near By Furniture"
+        }'
+      ></include>
+    </div>
+
+    <div class="services-row services-row-special">
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "service-card-small",
+          "imageSrc": "../assets/images/Rectangle 964.webp",
+          "altText": "Cold Chain Express",
+          "title": "Cold Chain Express"
+        }'
+      ></include>
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "service-card-large-special",
+          "imageSrc": "../assets/images/Rectangle 965.webp",
+          "altText": "Near By Electronics",
+          "title": "Near By Electronics"
+        }'
+      ></include>
+    </div>
+  </div>
+
+  <div class="services-pc-grid">
+    <div class="services-pc-row">
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "services-pc-card-large",
+          "imageSrc": "../assets/images/Rectangle 960.webp",
+          "altText": "Rail Express Service",
+          "title": "Rail Express"
+        }'
+      ></include>
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "services-pc-card-medium",
+          "imageSrc": "../assets/images/Rectangle 961.webp",
+          "altText": "Near By Furniture Service",
+          "title": "Near By Furniture"
+        }'
+      ></include>
+    </div>
+
+    <div class="services-pc-row">
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "services-pc-card-medium",
+          "imageSrc": "../assets/images/Rectangle 969.webp",
+          "altText": "Surface Express Service",
+          "title": "Surface Express"
+        }'
+      ></include>
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "services-pc-card-medium",
+          "imageSrc": "../assets/images/Rectangle 963.webp",
+          "altText": "Air Express Service",
+          "title": "Air Express"
+        }'
+      ></include>
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "services-pc-card-medium",
+          "imageSrc": "../assets/images/Rectangle 962.webp",
+          "altText": "Domestic Air Express Service",
+          "title": "Domestic Air Express"
+        }'
+      ></include>
+    </div>
+
+    <div class="services-pc-row">
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "services-pc-card-medium",
+          "imageSrc": "../assets/images/Rectangle 964.webp",
+          "altText": "Cold Chain Express Service",
+          "title": "Cold Chain Express"
+        }'
+      ></include>
+      <include
+        src="./components/service-card.html"
+        locals='{
+          "sizeClass": "services-pc-card-large",
+          "imageSrc": "../assets/images/Rectangle 965.webp",
+          "altText": "Near By Electronics Service",
+          "title": "Near By Electronics"
+        }'
+      ></include>
+    </div>
+  </div>
 </section>

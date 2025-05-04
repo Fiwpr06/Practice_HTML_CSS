@@ -23,9 +23,10 @@
     position: absolute;
     right: 0;
     width: 30%;
-    height: 100%;
+    height: 120%;
     color: $white;
     @include font-style($family: Poppins, $size: 0.8rem);
+    border: 0;
     white-space: wrap;
     background: $primary;
     padding: 1.1rem auto;
@@ -49,6 +50,7 @@
     height: 5.6rem;
     max-width: none;
     border-radius: 0.8rem;
+    width: 90%;
     input {
       padding: 1.8rem 0 1.8rem 1.8rem;
       @include font-style($family: Poppins, $size: 1.3rem);

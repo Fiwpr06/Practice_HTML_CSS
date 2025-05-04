@@ -15,12 +15,13 @@
   &__content {
     @include flex($direction: column, $justify: center, $align: center);
     gap: 1.8rem;
-    margin: 0 5.4rem;
+    margin: 0 2.5rem;
 
     .about-section__title {
       @include flex($direction: row, $justify: center, $align: flex-start);
       position: relative;
       height: auto;
+      text-align: center;
       .about-section__title-bg {
         @include font-style($size: 4.5rem, $weight: 700, $height: 1.5);
         color: $grey;
@@ -87,8 +88,8 @@
         @include flex($direction: row, $align: flex-start);
 
         .about-section__title-fg {
-          left: 1rem;
-          transform: translateY(-1rem);
+          left: 0.5rem;
+          transform: translateY(1.7rem);
         }
       }
 
@@ -136,6 +137,7 @@
       .about-section__title {
         height: 9.6rem;
         white-space: nowrap;
+
         @include flex($direction: row, $align: center);
 
         .about-section__title-bg {
@@ -153,7 +155,7 @@
         @include flex($align: flex-start);
         width: 100%;
         text-align: left;
-
+        max-width: 68.8rem;
         .about-section__description {
           width: 100%;
           @include font-style($size: 1.8rem, $height: 1.5);

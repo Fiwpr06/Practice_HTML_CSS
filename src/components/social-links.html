@@ -1,26 +1,7 @@
 <div class="social-links">
-  <a href="#" class="social-link"
-    ><img
-      src="../assets/icon/facebook logo.svg"
-      alt="Social Media"
-      class="social-icon"
-  /></a>
-  <a href="#" class="social-link"
-    ><img
-      src="../assets/icon/Twitter logo.svg"
-      alt="Social Media"
-      class="social-icon"
-  /></a>
-  <a href="#" class="social-link"
-    ><img
-      src="../assets/icon/linkedin logo.svg"
-      alt="Social Media"
-      class="social-icon"
-  /></a>
-  <a href="#" class="social-link"
-    ><img
-      src="../assets/icon/instagram logo.svg"
-      alt="Social Media"
-      class="social-icon"
-  /></a>
+  <each loop="icon in {{ icons }}">
+    <a href="{{ icon.href }}" class="social-link">
+      <img src="{{ icon.src }}" alt="{{ icon.alt }}" class="social-icon" />
+    </a>
+  </each>
 </div>

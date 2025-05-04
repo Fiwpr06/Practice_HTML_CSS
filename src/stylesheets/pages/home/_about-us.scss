@@ -1,6 +1,7 @@
 @use "../../abstracts/" as *;
 
 .about-section {
+  @include dimensions($w: 100%, $h: auto);
   @include flex(
     $direction: column,
     $justify: center,
@@ -8,9 +9,7 @@
     $wrap: wrap
   );
   gap: 3.2rem;
-  width: 100%;
   padding: 3.2rem 2;
-  height: auto;
 
   &__content {
     @include flex($direction: column, $justify: center, $align: center);
@@ -19,9 +18,10 @@
 
     .about-section__title {
       @include flex($direction: row, $justify: center, $align: flex-start);
+      @include dimensions($h: auto);
       position: relative;
-      height: auto;
       text-align: center;
+
       .about-section__title-bg {
         @include font-style($size: 4.5rem, $weight: 700, $height: 1.5);
         color: $grey;
@@ -62,11 +62,10 @@
 
   &__diagram {
     object-fit: contain;
-    max-width: 30rem;
+    @include dimensions($max-w: 30rem);
 
     img {
-      max-width: 100%;
-      height: auto;
+      @include dimensions($max-w: 100%, $h: auto);
       display: block;
     }
   }
@@ -78,7 +77,6 @@
     gap: 5.4rem;
 
     &__content {
-      max-width: auto;
       @include flex($direction: column, $align: flex-start);
       margin: 0;
       gap: 3.9rem;
@@ -95,18 +93,17 @@
 
       .about-section__text {
         @include flex($align: flex-start);
-        width: 100%;
-        max-width: 65rem;
+        @include dimensions($w: 100%, $max-w: 65rem);
         text-align: left;
 
         .about-section__description {
-          width: 100%;
+          @include dimensions($w: 100%);
           @include font-style($size: 1.4rem, $height: 1.5);
         }
       }
 
       .about-section__button {
-        width: 13.8rem;
+        @include dimensions($w: 13.8rem);
         padding: 1.2rem 3.6rem;
         @include font-style($size: 1.2rem, $height: 1.5);
         border-radius: 0.5rem;
@@ -115,30 +112,29 @@
     }
 
     &__diagram {
-      max-width: 43rem;
+      @include dimensions($max-w: 43rem);
     }
   }
 
   @include pc {
     @include flex($direction: row, $justify: center, $align: center);
+    @include dimensions($max-w: 144rem);
     margin: 0 auto;
     padding: 6.4rem 9.6rem;
-    max-width: 144rem;
     gap: 5.4rem;
 
     &__content {
       flex: 1 1 0%;
-      min-width: 0;
+      @include dimensions($min-w: 0);
       margin: 0;
 
       @include flex($direction: column, $align: flex-start);
       gap: 3.9rem;
 
       .about-section__title {
-        height: 9.6rem;
-        white-space: nowrap;
-
+        @include dimensions($h: 9.6rem);
         @include flex($direction: row, $align: center);
+        white-space: nowrap;
 
         .about-section__title-bg {
           @include font-style($size: 9.6rem);
@@ -153,25 +149,25 @@
 
       .about-section__text {
         @include flex($align: flex-start);
-        width: 100%;
+        @include dimensions($w: 100%, $max-w: 68.8rem);
         text-align: left;
-        max-width: 68.8rem;
+
         .about-section__description {
-          width: 100%;
+          @include dimensions($w: 100%);
           @include font-style($size: 1.8rem, $height: 1.5);
         }
       }
 
       .about-section__button {
-        width: fit-content;
-        padding: 1.2rem 3.6rem;
+        @include dimensions($w: 18.3rem);
         @include font-style($size: 1.6rem, $height: 1.5);
+        padding: 1.2rem 3.6rem;
         border-radius: 0.5rem;
       }
     }
 
     &__diagram {
-      max-width: 50rem;
+      @include dimensions($max-w: 50rem);
     }
   }
 }

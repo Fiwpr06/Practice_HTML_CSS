@@ -5,12 +5,11 @@
   position: relative;
   border-radius: 0.2rem;
   overflow: hidden;
-  height: 100%;
+  @include dimensions($h: 100%);
   object-fit: contain;
 
   .service-image {
-    max-width: 100%;
-    height: auto;
+    @include dimensions($max-w: 100%, $h: auto);
     z-index: 0;
   }
 
@@ -20,7 +19,7 @@
     left: 1.3rem;
     bottom: 1.1rem;
     z-index: 1;
-    width: 100%;
+    @include dimensions($w: 100%);
 
     @include medium {
       @include font-style($size: 2.3rem, $weight: 500, $height: 1.5);
@@ -36,19 +35,11 @@
   }
 
   &-large {
-    width: 100%;
+    @include dimensions($w: 100%);
   }
 
   &-medium {
-    width: calc(100% / 2 - 0.4rem);
-  }
-
-  &-small {
-    flex: 0.49;
-  }
-
-  &-large-special {
-    flex: 1;
+    @include dimensions($w: calc(100% / 2 - 0.4rem));
   }
 
   @include small {
@@ -56,7 +47,7 @@
     &-medium,
     &-small,
     &-large-special {
-      width: 100%;
+      @include dimensions($w: 100%);
     }
 
     .service-image {

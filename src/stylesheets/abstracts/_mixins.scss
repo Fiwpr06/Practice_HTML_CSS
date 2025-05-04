@@ -52,6 +52,39 @@
   }
 }
 
+@mixin dimensions(
+  $w: null,
+  $h: null,
+  $max-w: null,
+  $max-h: null,
+  $min-w: null,
+  $min-h: null
+) {
+  @if $w {
+    width: $w;
+  }
+
+  @if $h {
+    height: $h;
+  }
+
+  @if $max-w {
+    max-width: $max-w;
+  }
+
+  @if $max-h {
+    max-height: $max-h;
+  }
+
+  @if $min-w {
+    min-width: $min-w;
+  }
+
+  @if $min-h {
+    min-height: $min-h;
+  }
+}
+
 @mixin font-style(
   $family: null,
   $size: null,

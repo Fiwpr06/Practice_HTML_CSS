@@ -17,21 +17,19 @@
 
     &--next,
     &--prev {
-      width: 2.4rem;
-      height: 2.7rem;
+      @include dimensions($w: 2.4rem, $h: 2.7rem);
     }
   }
 
   &__arrow-icon {
     object-fit: contain;
     object-position: center;
-    width: 1.1rem;
-    height: auto;
+    @include dimensions($w: 1.1rem, $h: auto);
     display: block;
   }
 
   &__both-arrow {
-    @include flex( $align: flex-start);
+    @include flex($align: flex-start);
     gap: 3.2rem;
   }
 
@@ -39,20 +37,13 @@
     &__arrow {
       &--next,
       &--prev {
-        width: 3.6rem;
-        height: 4.2rem;
+        @include dimensions($w: 3.6rem, $h: 4.2rem);
       }
     }
 
     &__arrow-icon {
-      width: 1.8rem;
-      height: auto;
+      @include dimensions($w: 1.8rem, $h: auto);
     }
-  }
-
-  &__both-arrow {
-    @include flex($align: flex-start);
-    gap: 3.2rem;
   }
 
   @include pc {
@@ -66,19 +57,12 @@
 
       &--next,
       &--prev {
-        width: 5.1rem;
-        height: 5.7rem;
+        @include dimensions($w: 5.1rem, $h: 5.7rem);
       }
     }
 
     &__arrow-icon {
-      width: 2.5rem;
-      height: auto;
+      @include dimensions($w: 2.5rem, $h: auto);
     }
-  }
-
-  &__both-arrow {
-    @include flex($align: flex-start);
-    gap: 3.2rem;
   }
 }

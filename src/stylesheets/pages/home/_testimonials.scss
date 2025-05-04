@@ -2,13 +2,13 @@
 
 .testimonials {
   @include flex($direction: column, $justify: center, $align: center);
+  @include dimensions($w: 100%);
   margin: 0 auto;
   padding: 1.2rem 2rem;
-  width: 100%;
 
   &__header {
     @include flex($direction: column, $justify: start, $align: center);
-    width: 100%;
+    @include dimensions($w: 100%);
     padding: 1.2rem 1.9rem 1.2rem 2rem;
     white-space: nowrap;
   }
@@ -26,8 +26,8 @@
   }
 
   &__title-bg {
-    color: $grey;
     @include font-style($size: 4.1rem, $height: 1.5, $weight: 600);
+    color: $grey;
     opacity: 0.5;
     z-index: 0;
   }
@@ -42,19 +42,19 @@
 
   &__slider {
     @include flex($direction: column, $align: center);
-    width: 100%;
+    @include dimensions($w: 100%);
     gap: 4rem;
 
     &-container {
-      width: 100%;
+      @include dimensions($w: 100%);
     }
   }
 
   &__card {
     @include flex($direction: column, $justify: flex-start);
+    @include dimensions($w: 100%);
     position: relative;
     padding: 2.4rem 1.2rem;
-    width: 100%;
     gap: 0.4612rem;
     box-shadow: 0 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.251);
     border-radius: 0.8rem;
@@ -89,17 +89,15 @@
       position: relative;
       object-fit: contain;
       img {
-        max-width: 100%;
-        height: auto;
+        @include dimensions($max-w: 100%, $h: auto);
         display: block;
       }
     }
 
     &-image {
+      @include dimensions($max-w: 100%, $w: 15.3rem);
       object-fit: contain;
       object-position: center;
-      width: 15.3rem;
-      max-width: 100%;
       border-radius: 4.6rem;
 
       &:nth-of-type(1) {
@@ -107,9 +105,9 @@
       }
 
       &:nth-of-type(2) {
+        @include dimensions($h: 100%);
         position: absolute;
         object-fit: cover;
-        height: 100%;
         bottom: 1rem;
         right: 1rem;
         z-index: 2;
@@ -123,19 +121,19 @@
     }
 
     &-info {
-      width: auto;
+      @include dimensions($w: auto);
       white-space: nowrap;
       text-align: center;
 
       .testimonials__user-name {
-        color: $black;
         @include font-style($size: 1.7rem, $height: 1.5, $weight: 600);
+        color: $black;
       }
 
       .testimonials__user-position {
+        @include font-style($size: 0.8rem, $height: 2, $weight: 300);
         flex-shrink: 0;
         color: $black;
-        @include font-style($size: 0.8rem, $height: 2, $weight: 300);
         opacity: 0.9;
       }
     }
@@ -143,30 +141,30 @@
 
   &__text-container {
     @include flex($direction: column, $align: center);
-    width: 100%;
+    @include dimensions($w: 100%);
   }
 
   &__text-wrapper {
     @include flex($direction: column, $align: flex-start);
     position: relative;
-    width: 100%;
+    @include dimensions($w: 100%);
   }
 
   &__quote-icon {
+    @include dimensions($w: 2.1rem);
     aspect-ratio: 1.31;
-    width: 2.1rem;
     pointer-events: none;
   }
 
   &__quote-end-container {
     @include flex($justify: flex-end);
-    width: 100%;
+    @include dimensions($w: 100%);
   }
 
   &__quote-end-icon {
+    @include dimensions($w: 2.1rem);
     pointer-events: none;
     aspect-ratio: 1.47;
-    width: 2.2rem;
   }
 
   &__text {
@@ -181,8 +179,7 @@
 
     object-fit: contain;
     img {
-      max-width: 100%;
-      height: auto;
+      @include dimensions($max-w: 100%, $h: auto);
       display: block;
     }
 
@@ -262,30 +259,26 @@
       &:hover .dot-active:not(:hover) {
         border-radius: 50%;
         background-color: $black;
-        width: 1.6rem;
-        height: 1.6rem;
+        @include dimensions($w: 1.6rem, $h: 1.6rem);
       }
     }
 
     .dot {
+      @include dimensions($w: 1.6rem, $h: 1.6rem);
       background-color: $black;
       border-radius: 50%;
-      width: 1.6rem;
-      height: 1.6rem;
       transition: all 0.3s ease;
 
       &:hover {
         border-radius: 0.9762rem;
         background-color: $primary;
-        width: 3.5rem;
-        height: 1.6rem;
+        @include dimensions($w: 3.5rem, $h: 1.6rem);
       }
 
       &-active {
         border-radius: 0.9762rem;
         background-color: $primary;
-        width: 3.5rem;
-        height: 1.6rem;
+        @include dimensions($w: 3.5rem, $h: 1.6rem);
       }
     }
 
@@ -293,8 +286,7 @@
     #slide2:checked ~ .testimonials__dots label[for="slide2"] {
       border-radius: 0.9762rem;
       background-color: $primary;
-      width: 3.5rem;
-      height: 1.6rem;
+      @include dimensions($w: 3.5rem, $h: 1.6rem);
     }
 
     &__user {
@@ -302,11 +294,11 @@
       text-align: center;
 
       &-images {
-        max-width: 25rem;
+        @include dimensions($max-w: 25rem);
       }
 
       &-image {
-        width: 100%;
+        @include dimensions($w: 100%);
         flex: 0 1 33rem;
         border-radius: 10rem;
 
@@ -317,8 +309,9 @@
       }
 
       &-info {
-        width: auto;
+        @include dimensions($w: auto);
         padding: 0 1.4 3rem;
+
         .testimonials__user-name {
           @include font-style($size: 2.65rem);
         }
@@ -334,7 +327,7 @@
     }
 
     &__text-wrapper {
-      width: auto;
+      @include dimensions($w: auto);
       padding-right: 0.8rem;
     }
 
@@ -352,7 +345,7 @@
     }
 
     @include pc {
-      max-width: 144rem;
+      @include dimensions($max-w: 144rem);
       gap: 6rem;
 
       &__subtitle {
@@ -378,11 +371,11 @@
 
       &__user {
         &-images {
-          max-width: none;
+          @include dimensions($max-w: none);
         }
 
         &-image {
-          width: 100%;
+          @include dimensions($w: 100%);
           flex: 1 1 33rem;
         }
         &-info {
@@ -398,19 +391,18 @@
 
       &__quote-icon {
         aspect-ratio: 1.37;
-        width: 4.7rem;
+        @include dimensions($w: 4.7rem);
       }
 
       &__text {
-        width: fit-content;
-        max-width: 58.6rem;
+        @include dimensions($max-w: 58.6rem, $w: fit-content);
         @include font-style($size: 1.8rem);
         margin: 0 1rem 0 4.7rem;
       }
 
       &__quote-end-icon {
+        @include dimensions($w: 4.7rem);
         aspect-ratio: 1.47;
-        width: 4.7rem;
       }
     }
   }

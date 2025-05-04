@@ -1,19 +1,18 @@
 @use "../abstracts/" as *;
 
 .header-container {
-  position: relative;
-  width: 100%;
   z-index: 1;
+  position: relative;
+  @include dimensions($w: 100%);
   @include flex($direction: column, $align: center);
 
   .navigation-container {
-    width: 100%;
-    height: auto;
+    @include dimensions($w: 100%, $h: auto);
     background-color: $white;
     @include flex($direction: column, $align: center);
 
     .top-nav {
-      width: 100%;
+      @include dimensions($w: 100%);
       padding: 0.6rem 0;
       background-color: $black;
       @include flex($justify: center, $align: center);
@@ -36,12 +35,12 @@
     }
 
     .navbar {
-      width: 100%;
+      @include dimensions($w: 100%);
       padding: 0.8rem 2rem;
       @include flex($justify: space-between, $align: center);
 
       .nav-list {
-        height: 2.1rem;
+        @include dimensions($h: 2.1rem);
         @include flex($justify: center);
         gap: 4rem;
 
@@ -55,10 +54,7 @@
           .nav-item a {
             white-space: nowrap;
             color: $dark;
-            font-family: $primary-font;
-            font-size: 1.6rem;
-            font-weight: 500;
-            line-height: 2.1rem;
+            @include font-style($size: 1.6rem, $height: 2.1rem, $weight: 500);
             text-decoration: none;
             display: inline-block;
 
@@ -82,7 +78,6 @@
         border-radius: 0.6rem;
         background: $primary;
         color: $white;
-        font-size: 1.6rem;
         white-space: nowrap;
         cursor: pointer;
       }
@@ -90,8 +85,7 @@
       .menu-button {
         display: none;
         @include bg-img("../assets/icon/Menu.svg");
-        width: 2rem;
-        height: 1.7rem;
+        @include dimensions($w: 2rem, $h: 1.7rem);
         border: none;
         flex-shrink: 0;
         cursor: pointer;
@@ -120,9 +114,10 @@
     }
 
     @include tablet {
-      height: auto;
+      @include dimensions($h: auto);
+      
       .top-nav {
-        height: 5.3rem;
+        @include dimensions($h: 5.3rem);
         padding: 1.6rem 0;
 
         .note {
@@ -149,7 +144,7 @@
     }
 
     @include pc {
-      height: auto;
+      @include dimensions($h: auto);
 
       .top-nav {
         .note {
@@ -158,10 +153,8 @@
       }
 
       .navbar {
+        @include dimensions($max-w: 144rem, $h: 8.5rem);
         padding: 2rem 6.2rem;
-        gap: 1rem;
-        max-width: 144rem;
-        height: 8.5rem;
         gap: 1rem;
       }
     }

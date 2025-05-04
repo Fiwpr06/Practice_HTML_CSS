@@ -10,7 +10,17 @@
           pesask vyfisat. Viktiga poddradio har un mad och inde.
         </p>
 
-        <include src="./components/social-links.html"></include>
+        <include
+          src="./components/social-links.html"
+          locals='{
+            "icons": [
+              { "href": "#", "src": "../assets/icon/facebook logo.svg", "alt": "Facebook" },
+              { "href": "#", "src": "../assets/icon/Twitter logo.svg", "alt": "Twitter" },
+              { "href": "#", "src": "../assets/icon/linkedin logo.svg", "alt": "LinkedIn" },
+              { "href": "#", "src": "../assets/icon/instagram logo.svg", "alt": "Instagram" }
+            ]
+          }'
+        ></include>
       </div>
     </div>
 
@@ -71,7 +81,17 @@
   <div class="footer-bottom">
     <div class="footer-bottom__container">
       <p class="copyright">© 2023 YourTrans | Powered by BADAL</p>
-      <include src="./components/social-links.html"></include>
+      <include
+        src="./components/social-links.html"
+        locals='{
+          "icons": [
+            { "href": "#", "src": "../assets/icon/facebook logo.svg", "alt": "Facebook" },
+            { "href": "#", "src": "../assets/icon/Twitter logo.svg", "alt": "Twitter" },
+            { "href": "#", "src": "../assets/icon/linkedin logo.svg", "alt": "LinkedIn" },
+            { "href": "#", "src": "../assets/icon/instagram logo.svg", "alt": "Instagram" }
+          ]
+        }'
+      ></include>
     </div>
   </div>
 </footer>

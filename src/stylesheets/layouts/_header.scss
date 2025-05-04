@@ -17,7 +17,7 @@
       padding: 0.6rem 0;
       background-color: $black;
       @include flex($justify: center, $align: center);
-
+      text-align: center;
       .note {
         color: $white;
         @include font-style($size: 0.8rem, $height: 2.1, $weight: 400);
@@ -37,7 +37,7 @@
 
     .navbar {
       width: 100%;
-      padding: 0.8rem 0;
+      padding: 0.8rem 2rem;
       @include flex($justify: space-between, $align: center);
 
       .nav-list {
@@ -158,9 +158,10 @@
       }
 
       .navbar {
-        max-width: 124rem;
+        padding: 2rem 6.2rem;
+        gap: 1rem;
+        max-width: 144rem;
         height: 8.5rem;
-        padding: 2rem 0rem;
         gap: 1rem;
       }
     }

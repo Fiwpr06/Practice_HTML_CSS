@@ -2,22 +2,20 @@
 @use "../../components/hero-search";
 
 .hero-container {
+  @include dimensions($w: 100%);
   position: relative;
-  width: 100%;
 
   .hero__background {
+    @include flex($justify: center, $align: center);
+    @include dimensions($w: 100%, $h: 100%);
     pointer-events: none;
     user-select: none;
     position: absolute;
     left: 0;
-    width: 100%;
-    height: 100%;
     z-index: -1;
-    @include flex($justify: center, $align: center);
 
     .background-img1 {
-      width: 100%;
-      height: 80rem;
+      @include dimensions($w: 100%, $h: 80rem);
     }
 
     .background-img {
@@ -27,62 +25,61 @@
 
   .hero-content {
     @include flex($justify: center, $align: center);
+    @include dimensions($w: 100%);
     margin: 0 auto;
-    width: 100%;
     padding: 1rem 0;
     position: relative;
 
     .hero-background {
+      @include flex($justify: center, $align: center);
+      @include dimensions($w: 100%, $h: 100%);
       pointer-events: none;
       user-select: none;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
       z-index: -1;
-      @include flex($justify: center, $align: center);
       background: lightgray 0% 0% / 3.33rem 3.33rem repeat;
       mix-blend-mode: soft-light;
       opacity: 0.6;
 
       img {
-        width: 100%;
-        height: 100%;
+        @include dimensions($w: 100%, $h: 100%);
         object-fit: cover;
         display: block;
       }
     }
 
     .hero-container {
+      @include flex($justify: center, $align: flex-start);
+      @include dimensions($min-h: 49rem);
       position: relative;
       z-index: 1;
-      min-height: 49rem;
       margin: 0 1.2rem;
       padding: 4rem 1.2rem;
       border: 0.0663rem solid #10254d;
       border-radius: 0.5rem;
-      @include flex($justify: center, $align: flex-start);
 
       .hero {
-        width: 100%;
-        gap: 4.5rem;
         @include flex($direction: column, $align: center);
+        @include dimensions($w: 100%);
+        gap: 4.5rem;
 
         &__content {
-          width: 100%;
-          gap: 1.5rem;
           @include flex($direction: column, $align: flex-start);
+          @include dimensions($w: 100%);
+          gap: 1.5rem;
 
           .hero__text {
-            width: 100%;
-            gap: 1.5rem;
             @include font-style($size: 1.1rem, $weight: 400, $height: 1.7rem);
             @include flex($direction: column, $align: flex-start);
+            @include dimensions($w: 100%);
+            gap: 1.5rem;
 
             .hero__heading {
-              gap: 1rem;
               @include flex($direction: column, $align: flex-start);
+              gap: 1rem;
+              
               h2 {
                 @include font-style(
                   $size: 0.7rem,
@@ -101,12 +98,11 @@
         }
 
         &__img {
+          @include dimensions($max-w: 45rem);
           object-fit: contain;
-          max-width: 45rem;
 
           img {
-            max-width: 100%;
-            height: auto;
+            @include dimensions($max-w: 100%, $h: auto);
             display: block;
           }
         }
@@ -138,44 +134,40 @@
   }
 
   @include pc {
-    margin: 0 auto;
-    width: 100%;
     @include flex($direction: column, $align: center);
-    margin-top: 4.2rem;
+    @include dimensions($w: 100%);
+    margin: 4.2rem auto 0;
 
     .hero__background {
       .background-img1 {
         display: none;
       }
       .background-img {
-        width: 100%;
-        height: auto;
+        @include dimensions($w: 100%, $h: auto);
         object-fit: contain;
         display: block;
       }
     }
 
     .hero-content {
-      width: 100%;
+      @include dimensions($w: 100%, $max-w: 144rem);
       padding: 2rem 6.6rem;
-      max-width: 144rem;
 
       .hero-background {
-        width: 100%;
-        max-width: 134rem;
+        @include dimensions($w: 100%, $max-w: 134rem);
         left: 50%;
         transform: translateX(-50%);
       }
 
       .hero-container {
-        margin: 0;
-        width: 100%;
-        padding: 0 3rem;
         @include flex($justify: center, $align: center);
+        @include dimensions($w: 100%);
+        margin: 0;
+        padding: 0 3rem;
 
         .hero {
           padding: 12.5rem 0;
-          width: 100%;
+          @include dimensions($w: 100%);
           @include flex(
             $direction: row,
             $justify: space-between,
@@ -184,7 +176,7 @@
           gap: 4rem;
 
           .hero__content {
-            max-width: 51rem;
+            @include dimensions($max-w: 51rem);
             @include flex(
               $direction: column,
               $justify: center,
@@ -193,8 +185,8 @@
             gap: 3.2rem;
 
             .hero__text {
-              gap: 3.2rem;
               @include font-style($size: 1.8rem, $height: 1.5, $weight: 400);
+              gap: 3.2rem;
 
               .hero__heading {
                 gap: 3.2rem;
@@ -211,11 +203,10 @@
           }
           &__img {
             object-fit: contain;
-            max-width: 66rem;
+            @include dimensions($max-w: 66rem);
 
             img {
-              max-width: 100%;
-              height: auto;
+              @include dimensions($max-w: 100%, $h: auto);
               display: block;
             }
           }

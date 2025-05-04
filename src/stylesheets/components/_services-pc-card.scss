@@ -7,8 +7,7 @@
   overflow: hidden;
 
   .services-pc-image {
-    width: 100%;
-    height: 100%;
+    @include dimensions($w: 100%, $h: 100%);
     object-fit: cover;
     object-position: center;
     z-index: 0;
@@ -16,11 +15,12 @@
 
   .services-pc-name {
     @include font-style($size: 3.2rem, $weight: 500, $height: 1.5);
-    width: 100%;
+    @include dimensions($w: 100%);
     position: absolute;
     left: 3.3rem;
     bottom: 2.9rem;
     z-index: 1;
+    
     @include tablet {
       @include font-style($size: 2.3rem, $weight: 500, $height: 1.5);
     }

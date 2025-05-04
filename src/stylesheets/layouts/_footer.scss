@@ -5,12 +5,12 @@
 .site-footer {
   @include flex($direction: column, $align: flex-start);
   margin-top: 1.6rem;
-  width: 100%;
+  @include dimensions($w: 100%);
 
   .footer-content {
     @include flex($direction: column, $align: flex-start);
     margin: 0 auto;
-    width: 100%;
+    @include dimensions($w: 100%);
     padding: 5.6rem 8.2rem 5.6rem 2.4rem;
     gap: 3.7rem;
 
@@ -87,12 +87,12 @@
               aspect-ratio: 1;
               object-fit: contain;
               object-position: center;
-              width: 1.6rem;
+              @include dimensions($w: 1.6rem);
               flex-shrink: 0;
             }
 
             .contact-address {
-              width: 14.1rem;
+              @include dimensions($w: 14.1rem);
             }
           }
         }
@@ -103,7 +103,7 @@
       background-color: $white;
       @include flex($direction: column, $align: flex-start);
       gap: 1.4rem;
-      width: 100%;
+      @include dimensions($w: 100%);
       @include font-style($size: 1.2rem, $weight: 600);
       color: $dark;
 
@@ -111,14 +111,13 @@
         aspect-ratio: 1.67;
         object-fit: contain;
         object-position: center;
-        width: 100%;
+        @include dimensions($w: 100%);
+        transition: transform 0.3s ease;
+
         img {
-          max-width: 100%;
-          height: auto;
+          @include dimensions($max-w: 100%, $h: auto);
           display: block;
         }
-
-        transition: transform 0.3s ease;
 
         &:hover {
           transform: scale(1.1);
@@ -130,14 +129,14 @@
 
   .footer-bottom {
     background-color: $black;
-    width: 100%;
+    @include dimensions($w: 100%);
     color: $white;
 
     .footer-bottom__container {
       padding: 1.2rem 1.5rem;
       @include flex($justify: space-between, $align: center);
       margin: 0 auto;
-      width: 100%;
+      @include dimensions($w: 100%);
       @include font-style($size: 1.2rem, $weight: 400);
       white-space: nowrap;
 
@@ -153,19 +152,19 @@
 
     .footer-content {
       @include flex($direction: row, $align: flex-start, $justify: center);
-      width: 100%;
+      @include dimensions($w: 100%);
       padding: 6.5rem 9rem;
       gap: 5.2rem;
 
       .company-info {
-        width: auto;
+        @include dimensions($w: auto);
         gap: 3.3rem;
 
         .company-details {
           gap: 4rem;
 
           .company-description {
-            max-width: 37rem;
+            @include dimensions($max-w: 37rem);
             @include font-style($size: 1.2rem);
           }
         }
@@ -195,10 +194,10 @@
               gap: 1.6rem;
 
               .contact-icon {
-                width: auto;
+                @include dimensions($w: 2.4rem);
               }
               .contact-address {
-                width: auto;
+                @include dimensions($w: auto);
               }
             }
           }
@@ -213,8 +212,7 @@
 
     .footer-bottom {
       @include flex($align: flex-start);
-      width: 100%;
-
+      @include dimensions($w: 100%);
       align-self: stretch;
 
       .footer-bottom__container {
@@ -228,7 +226,7 @@
 
     @include pc {
       .footer-content {
-        max-width: 144rem;
+        @include dimensions($max-w: 144rem);
         gap: 6.7rem;
 
         .company-info {
@@ -253,7 +251,7 @@
               @include font-style($size: 1.4rem);
 
               .contact-item {
-                max-width: 24.8rem;
+                @include dimensions($max-w: 24.8rem);
                 @include flex($align: flex-start);
               }
             }
@@ -263,13 +261,13 @@
         .footer-map {
           gap: 2rem;
           flex: 0 1 36rem;
-          min-width: 24rem;
+          @include dimensions($min-w: 24rem);
         }
       }
 
       .footer-bottom {
         .footer-bottom__container {
-          max-width: 144rem;
+          @include dimensions($max-w: 144rem);
           @include font-style($size: 1.6rem);
         }
       }

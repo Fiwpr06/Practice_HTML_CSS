@@ -1,9 +1,10 @@
+@use "../abstracts/" as *;
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
   overflow-x: hidden;
+  @include dimensions($max-w: 100%, $w: 100%);
 }
 
 *,
@@ -17,8 +18,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  min-height: 100vh;
+  @include dimensions($w: 100%, $min-h: 100vh);
   position: relative;
   overflow-x: hidden;
 }

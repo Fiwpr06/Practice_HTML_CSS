@@ -5,7 +5,6 @@
 .services-section {
   @include flex($direction: column, $justify: start, $align: center);
   padding: 0 2rem 4.5rem;
-  @include font-style();
   gap: 3rem;
 
   .section-header {
@@ -32,23 +31,23 @@
 
   .services-grid {
     @include flex($direction: column, $justify: start, $align: center);
-    width: 100%;
-    gap: 0.8rem;
     @include font-style($height: 1.5, $weight: 500);
+    @include dimensions($w: 100%, $h: 100%);
+    gap: 0.8rem;
     color: $white;
 
     .services-row {
-      width: 100%;
-      height: auto;
-      align-items: stretch;
       @include flex($direction: column, $justify: start, $align: center);
+      @include dimensions($w: 100%, $h: 100%);
+      align-items: stretch;
 
       &-small,
       &-special {
-        height: 100%;
         @include flex($direction: row, $justify: start, $align: start);
+        @include dimensions($h: 100%);
         gap: 0.8rem;
         flex: 1;
+
         @include small {
           @include flex($direction: column, $justify: start, $align: center);
         }
@@ -107,12 +106,14 @@
     }
 
     .services-pc-grid {
-      width: 100%;
       @include flex($direction: column, $justify: center, $align: center);
+      @include dimensions($w: 100%);
+
       .services-pc-row {
         @include flex($justify: start, $align: end, $wrap: wrap);
         gap: 2rem;
         margin-top: 3.8rem;
+
         &:first-child {
           margin-top: 0;
         }
@@ -120,7 +121,7 @@
     }
 
     @include pc {
-      max-width: 144rem;
+      @include dimensions($max-w: 144rem);
 
       .section-title-bg {
         @include font-style($size: 9.6rem, $weight: 600);

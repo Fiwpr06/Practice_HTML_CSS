@@ -6,14 +6,12 @@
   border: 0.01rem solid $dark transparent;
   white-space: nowrap;
   overflow: hidden;
-  height: 3.5rem;
-  width: 80%;
-  max-width: 33rem;
+  @include dimensions($h: 3.5rem, $w: 80%, $max-w: 33rem);
   position: relative;
   z-index: 1;
 
   input {
-    width: 100%;
+    @include dimensions($w: 100%);
     padding: 1.1rem 1.6rem;
     color: $dark;
     @include font-style($family: Poppins, $size: 0.8rem);
@@ -22,8 +20,7 @@
   button {
     position: absolute;
     right: 0;
-    width: 30%;
-    height: 120%;
+    @include dimensions($h: 120%, $w: 30%);
     color: $white;
     @include font-style($family: Poppins, $size: 0.8rem);
     border: 0;
@@ -35,9 +32,10 @@
   }
 
   @include tablet {
-    height: 4.5rem;
-    max-width: none;
+    @include dimensions($h: 4.5rem, $max-w: none);
+    
     input {
+      border-radius: 0.6rem;
       @include font-style($family: Poppins, $size: 1rem);
     }
 
@@ -47,10 +45,8 @@
   }
 
   @include pc {
-    height: 5.6rem;
-    max-width: none;
+    @include dimensions($h: 5.6rem, $w: 90%, $max-w: none);
     border-radius: 0.8rem;
-    width: 90%;
     input {
       padding: 1.8rem 0 1.8rem 1.8rem;
       @include font-style($family: Poppins, $size: 1.3rem);

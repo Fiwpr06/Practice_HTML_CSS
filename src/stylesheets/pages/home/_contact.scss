@@ -2,24 +2,25 @@
 @use "../../components/watermark";
 
 .contact-section {
-  width: 100%;
+  @include dimensions($w: 100%);
+  margin-top: 5.2rem;
   background: $black;
   position: relative;
   overflow: hidden;
 
   .contact-bound {
     @include flex($direction: column, $align: flex-start);
+    @include dimensions($w: 100%);
     margin: 5.2rem auto 0;
-    width: 100%;
     padding: 5.9rem 4.3rem;
     gap: 4.55rem;
   }
 
   .contact-header {
     @include flex($direction: column, $align: flex-start);
+    @include dimensions($w: fit-content);
     gap: 0.8rem;
     z-index: 0;
-    width: fit-content;
     color: $white;
 
     .contact-title {
@@ -33,19 +34,19 @@
 
   .contact-form {
     @include flex($direction: column, $align: flex-start);
+    @include font-style($weight: 400, $height: 1.5);
+    @include dimensions($w: 100%);
     gap: 2.8rem;
     z-index: 0;
     color: $grey;
-    @include font-style($weight: 400, $height: 1.5);
-    width: 100%;
 
     .form-row {
-      width: 100%;
+      @include dimensions($w: 100%);
       @include flex($align: flex-start);
       gap: 0.9rem;
 
       .form-group {
-        width: 100%;
+        @include dimensions($w: 100%);
         @include flex($direction: column, $align: flex-start);
         gap: 0.3rem;
 
@@ -56,27 +57,26 @@
     }
 
     .input-line {
+      @include dimensions($w: 100%, $h: 0.1rem);
       border: none;
-      height: 0.1rem;
       background-color: $grey;
-      width: 100%;
       margin: 0;
     }
 
     input {
+      @include font-style($size: 0.8rem);
+      @include dimensions($w: 100%);
       background: transparent;
       border: none;
       color: $grey;
-      @include font-style($size: 0.8rem);
       padding: 0;
       outline: none;
-      width: 100%;
       -webkit-appearance: none;
       appearance: none;
     }
 
     .message-group {
-      width: 100%;
+      @include dimensions($w: 100%);
       white-space: nowrap;
       .form-input::placeholder {
         color: $grey;
@@ -84,32 +84,33 @@
     }
 
     .dropdown-container {
-      width: 100%;
+      @include dimensions($w: 100%);
       @include flex($justify: space-between);
 
       .dropdown-arrow {
+        @include dimensions($w: 0.7rem);
         aspect-ratio: 2.33;
         object-fit: contain;
         object-position: center;
-        width: 0.7rem;
         flex-shrink: 0;
       }
     }
   }
 
   @include medium {
-    width: 100%;
+    margin: 0;
+    @include dimensions($w: 100%);
 
     .contact-bound {
       @include flex($direction: row, $justify: center, $align: flex-start);
+      @include dimensions($w: 100%);
       margin: 0 auto;
-      width: 100%;
       padding: 17.2rem 9.6rem;
       gap: 5.5rem;
     }
 
     .contact-header {
-      width: calc((100% - 6.6rem) / 2);
+      @include dimensions($w: calc((100% - 6.6rem) / 2));
       order: 2;
       gap: 1.4rem;
 
@@ -123,17 +124,18 @@
     }
 
     .contact-form {
-      order: 1;
       @include flex($direction: column, $align: flex-start);
+      @include dimensions($w: calc((100% - 6.6rem) / 2));
+      order: 1;
       gap: 6.1rem;
-      width: calc((100% - 6.6rem) / 2);
+
       .form-row {
-        width: 100%;
+        @include dimensions($w: 100%);
         @include flex($align: flex-start);
         gap: 1.9rem;
 
         .form-group {
-          width: 100%;
+          @include dimensions($w: 100%);
           gap: 0.3rem;
         }
       }
@@ -144,19 +146,19 @@
 
       .dropdown-container {
         .dropdown-arrow {
-          width: 1.5rem;
+          @include dimensions($w: 1.5rem);
         }
       }
     }
 
     @include pc {
       .contact-bound {
-        max-width: 144rem;
+        @include dimensions($max-w: 144rem);
         gap: 6.6rem;
       }
 
       .contact-header {
-        width: calc((100% - 6.6rem) / 2);
+        @include dimensions($w: calc((100% - 6.6rem) / 2));
         order: 2;
         gap: 1.8rem;
 
@@ -170,17 +172,18 @@
       }
 
       .contact-form {
-        order: 1;
         @include flex($direction: column, $align: flex-start);
+        @include dimensions($w: calc((100% - 6.6rem) / 2));
+        order: 1;
         gap: 6.1rem;
-        width: calc((100% - 6.6rem) / 2);
+        
         .form-row {
-          width: 100%;
+          @include dimensions($w: 100%);
           @include flex($align: flex-start);
           gap: 1.8rem;
 
           .form-group {
-            width: 100%;
+            @include dimensions($w: 100%);
             gap: 0.5rem;
           }
         }

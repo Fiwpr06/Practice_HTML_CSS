@@ -4,9 +4,8 @@
 
 .services-section {
   @include flex($direction: column, $justify: start, $align: center);
-  padding: 0 1.9rem 0 2rem;
+  padding: 0 2rem 4.5rem;
   @include font-style();
-  margin: 0 3.4rem;
   gap: 3rem;
 
   .section-header {
@@ -50,13 +49,13 @@
         @include flex($direction: row, $justify: start, $align: start);
         gap: 0.8rem;
         flex: 1;
-        @media (max-width: 360px) {
+        @include small {
           @include flex($direction: column, $justify: start, $align: center);
         }
       }
     }
 
-    @media (max-width: 360px) {
+    @include small {
       .services-grid {
         .services-row-small,
         .services-row-special {

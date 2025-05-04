@@ -1,0 +1,31 @@
+<div class="footer-links-container">
+  <nav class="footer-nav">
+    <h3 class="footer-heading">Pages</h3>
+    <ul class="footer-links">
+      <each loop="page in {{ pages }}">
+        <li><a href="{{ page.href }}">{{ page.label }}</a></li>
+      </each>
+    </ul>
+  </nav>
+
+  <div class="footer-contact">
+    <h3 class="footer-heading">Contact</h3>
+    <ul class="contact-list">
+      <each loop="contact in {{ contacts }}">
+        <li class="contact-item">
+          <img
+            src="{{ contact.icon }}"
+            alt="{{ contact.alt }}"
+            class="contact-icon"
+          />
+          <if condition="contact.isAddress">
+            <address class="contact-address">{{ contact.text }}</address>
+          </if>
+          <if condition="!contact.isAddress">
+            <span class="contact-text">{{ contact.text }}</span>
+          </if>
+        </li>
+      </each>
+    </ul>
+  </div>
+</div>

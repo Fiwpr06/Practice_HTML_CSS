@@ -1,0 +1,7 @@
+<nav class="nav-list">
+  <ul class="list-items">
+    <each loop="item in {{ menu }}">
+      <li class="nav-item"><a href="{{ item.href }}">{{ item.label }}</a></li>
+    </each>
+  </ul>
+</nav>
